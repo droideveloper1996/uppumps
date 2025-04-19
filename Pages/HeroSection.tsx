@@ -122,7 +122,7 @@ export default function HeroSection() {
               {/* Close Button */}
               <button
                 onClick={() => setIsVideoOpen(false)}
-                className="absolute -top-10 sm:top-2 right-2 text-gray-800 text-3xl font-bold z-50 cursor-pointer"
+                className="fixed top-5 right-5 bg-white rounded-full px-2 text-gray-800 text-3xl font-bold z-50 cursor-pointer"
               >
                 ×
               </button>
