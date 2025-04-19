@@ -73,7 +73,7 @@ const SpareParts = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
           className="mb-24"
-        >
+        > 
           <h4 className="text-lg sm:text-xl font-bold text-slate-800 mb-4">
             Spare Parts and Accessories
           </h4>
