@@ -4,67 +4,219 @@ import React from "react";
 import { motion } from "framer-motion";
 import Toolbar from "@/Pages/ToolBar";
 import Footer from "@/Pages/Footer";
+import Image from "next/image";
+
+const partDetails = [
+  {
+    name: "Head Assembly",
+    specification: "Standard & EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Cylinder Assembly",
+    specification: "Standard & EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Upper Valve Assembly",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Plunger Valve Assembly",
+    specification: "EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Lower Valve Assembly",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Head Box",
+    specification: "Standard & EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Handle Standard",
+    specification: "Hot Dip Galvanised, EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Stand",
+    specification: "Telescopic, Normal, EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Water Tank",
+    specification: "Optional",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Plunger Rod",
+    specification: "Standard & EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Axle",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Third Plate",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Connecting Rod",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Socket",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Bearing",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Coupler",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Hex Bolt",
+    specification: "M12x40, M12x20",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Hex Nut",
+    specification: "M12x1.75",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "HT Bolt",
+    specification: "M10x40",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Nylock Nut",
+    specification: "M10",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Chain with Coupling",
+    specification: "Regular & Roller Chain",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Washer",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Reducer Cap",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Cylinder Body with Brass Liner",
+    specification: "Standard & EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Brass Liner",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Plunger Yoke Body",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Plunger Upper Valve",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Bucket Spacer",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Lower Spacer",
+    specification: "EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Follower",
+    specification: "Standard & EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Check Valve Guide",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Check Valve Seat",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Rubber Sheet Retainer",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Rubber Bucket",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Sealing Ring",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Rubber Seating Upper Valve",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Rubber Seating Lower Valve",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "T-Bar",
+    specification: "EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Counter Weight",
+    specification: "EDWP",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Upper Valve Guide with Rubber Seating",
+    specification: null,
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+  {
+    name: "Tool Set",
+    specification: "For Installation & Major Repair",
+    image: "/assets/ProductImage/istockphoto-1400187987-612x612.jpg",
+  },
+];
 
 const SpareParts = () => {
-  const partsList = [
-    "Head Assembly",
-    "Head Assembly EDWP",
-    "Cylinder Assembly",
-    "Cylinder Assembly EDWP",
-    "Upper Valve Assembly",
-    "Plunger Valve Assembly EDWP",
-    "Lower Valve Assembly",
-    "Head Box",
-    "Head Box EDWP",
-    "Handle Standard (Hot Dip Galvanised)",
-    "Handle Standard EDWP",
-    "Stand Telescopic",
-    "Stand Telescopic EDWP",
-    "Stand Normal",
-    "Stand Normal EDWP",
-    "Water Tank",
-    "Plunger Rod",
-    "Plunger Rod EDWP",
-    "Axle",
-    "Third Plate",
-    "Connecting Rod",
-    "Socket",
-    "Bearing",
-    "Coupler",
-    "Hex Bolt M12x40",
-    "Hex Bolt M12x20",
-    "Hex Nut M12x1.75",
-    "HT Bolt M10x40",
-    "Nylock Nut M10",
-    "Chain with Coupling",
-    "Chain with Coupling (Roller Chain)",
-    "Washer",
-    "Reducer Cap",
-    "Cylinder Body with Brass Liner",
-    "Cylinder Body with Brass Liner EDWP",
-    "Brass Liner",
-    "Plunger Yoke Body",
-    "Plunger Upper Valve",
-    "Bucket Spacer",
-    "Lower Spacer EDWP",
-    "Follower",
-    "Follower EDWP",
-    "Check Valve Guide",
-    "Check Valve Seat",
-    "Rubber Sheet Retainer",
-    "Rubber Bucket",
-    "Sealing Ring",
-    "Rubber Seating Upper Valve",
-    "Rubber Seating Lower Valve",
-    "T-Bar EDWP",
-    "Counter Weight EDWP",
-    "Upper Valve Guide with Rubber Seating",
-    "Set of Tools for Installation of SDWP & EDWP complete",
-    "Set of Tools for Installation/or Major Repair of Hand Pump",
-  ];
-
   return (
-    <section className="w-full bg-white min-h-screen">
+    <section className="w-full bg-slate-50 min-h-screen">
       <Toolbar />
       <div className="max-w-7xl mx-auto pt-28 px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -73,30 +225,48 @@ const SpareParts = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
           className="mb-24"
-        > 
-          <h4 className="text-lg sm:text-xl font-bold text-slate-800 mb-4">
-            Spare Parts and Accessories
-          </h4>
-          <p className="text-slate-700 text-sm sm:text-base mb-6 max-w-3xl">
-            Our spare parts are <strong>manufactured in-house</strong> to ensure
-            unmatched compatibility and durability across all Hand Pump models.
+        >
+          <h2 className="text-3xl font-bold text-slate-800 mb-2 text-center">
+            Spare Parts & Accessories
+          </h2>
+          <p className="text-slate-600 max-w-3xl mx-auto text-center mb-12 text-sm sm:text-base">
+            Explore our precision-engineered spare parts designed for durability
+            and seamless compatibility with our hand pump models.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            {partsList.map((item, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {partDetails.map((part, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition"
+                className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
               >
-                <div className="w-5 h-5 mt-1 bg-blue-600 rounded-full" />
-                <p className="text-slate-700 text-sm sm:text-base font-medium">
-                  {item}
-                </p>
+                <div className="h-48 relative">
+                  <Image
+                    src={part.image}
+                    alt={part.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-5 flex flex-col justify-between grow">
+                  <h5 className="text-lg font-semibold text-slate-800 mb-2">
+                    {part.name}
+                  </h5>
+                  <p className="text-slate-600 text-sm mb-4">
+                    <strong>Specification:</strong>{" "}
+                    {part.specification || "Standard compatible component"}
+                  </p>
+                  <div className="mt-auto">
+                    <button className="text-blue-600 text-sm font-medium hover:underline">
+                      View more
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="text-slate-600 text-sm sm:text-base space-y-2">
+          <div className="mt-16 text-center text-slate-600 text-sm sm:text-base space-y-2">
             <p>
               <strong>Note:</strong> As per list provided — the entire catalogue
               will not be provided online.

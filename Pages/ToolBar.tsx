@@ -7,7 +7,14 @@ import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 import CustomBtn from "./CustomBtn";
 
-const navItems = ["Home", "About", "Features", "Services", "Contact"];
+const navItems = [
+  "Home",
+  "About",
+  "Products",
+  "Features",
+  "Services",
+  "Contact",
+];
 
 export default function ILandingNavbar() {
   const [isOpen, setIsOpen] = useState(false);

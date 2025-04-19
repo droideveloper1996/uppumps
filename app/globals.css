@@ -1,13 +1,20 @@
 @import "tailwindcss";
 
+/* Load Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600&display=swap");
+
+/* Light Mode Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
+  --font-poppins: "Poppins", sans-serif;
+  --font-lato: "Lato", sans-serif;
   --font-sans: var(--font-poppins), var(--font-lato), sans-serif;
   --font-mono: monospace;
 }
 
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -15,14 +22,9 @@
   }
 }
 
+/* Global Styles */
 body {
-  background: transparent;
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-}
-
-.about_bg_Image {
-  background-image: url("/assets/AboutImage/gallery-ds-X_tEarX6svc-unsplash.jpg");
-  background-attachment: fixed;
-  background-size: cover;
 }
