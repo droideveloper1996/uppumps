@@ -26,7 +26,7 @@ export default function NewToolbar() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full h-[85vh] bg-blac">
+      <section className="relative w-full h-[85vh] bg-black">
         <Image
           src="/assets/handpump-shikrawa-3.jpeg"
           alt="Background"
@@ -67,7 +67,7 @@ export default function NewToolbar() {
 function NavBar() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <ul className="flex flex-wrap gap-6 justify-center text-sm sm:text-base font-semibold text-gray-80">
+      <ul className="flex flex-wrap gap-6 justify-center text-sm sm:text-base font-semibold text-gray-800">
         {navItems.map((item, i) =>
           item.dropdown ? (
             <li
