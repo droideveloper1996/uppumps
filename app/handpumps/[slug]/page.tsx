@@ -1,10 +1,16 @@
-"use client";
+// app/handpumps/[slug]/page.tsx
 
 import HandpumpDetails from "@/IndianPages/HandpumpDetails";
 import Footer from "@/Pages/Footer";
 import NewToolbar from "@/Pages/NewToolbar";
 
-export default function HandpumpPage({ params }: { params: { slug: string } }) {
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default function Page({ params }: Props) {
   return (
     <>
       <NewToolbar />
