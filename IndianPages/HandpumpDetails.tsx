@@ -179,7 +179,6 @@ export default function HandpumpDetails({ slug }: { slug: string }) {
           </div>
         </form>
       </div>
-
     </section>
   );
 }

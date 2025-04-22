@@ -106,10 +106,12 @@ export default function NewToolbar() {
 function slugify(text: string) {
   return text
     .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[\(\)]+/g, "")
-    .replace(/&/g, "and")
-    .replace(/[^\w\-]+/g, "");
+    .replace(/\s+/g, "-") // spaces to hyphens
+    .replace(/[()]/g, "") // remove brackets
+    .replace(/&/g, "and") // ampersand to 'and'
+    .replace(/[^\w\-]+/g, "") // remove non-word characters
+    .replace(/\-\-+/g, "-") // collapse multiple dashes
+    .trim();
 }
 
 function NavBar() {
