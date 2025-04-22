@@ -84,7 +84,7 @@ const railwayContent: Record<
   },
 };
 
-export default function RailwayDetails({ slug }: { slug: string }) {
+export default function RailwayDetails({ slug }: { slug: any }) {
   const data = railwayContent[slug];
 
   if (!data) {

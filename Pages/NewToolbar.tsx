@@ -22,19 +22,23 @@ const navItems = [
   },
   {
     label: "RAILWAY",
-    baseHref: "/railway",
-    dropdown: [
-      "Rail Wheel",
-      "Complete Shell Assembly",
-      "Complete Coach",
-      "Small Track equipment for Railway",
-      "Heavy Rail-track manufacturing and consulting",
-      "All other Small and heavy Railway Equipment and vehicles",
-      "Dealing in Robotic Platform with remote and battery operated equipments",
-      "Roof, sidewall, underframe, for coach and locomotive",
-      "Biomass for all types of STP Plant",
-    ],
+    href: "/railway",
   },
+  //  {
+  //   label: "RAILWAY",
+  //   baseHref: "/railway",
+  //   dropdown: [
+  //     "Rail Wheel",
+  //     "Complete Shell Assembly",
+  //     "Complete Coach",
+  //     "Small Track equipment for Railway",
+  //     "Heavy Rail-track manufacturing and consulting",
+  //     "All other Small and heavy Railway Equipment and vehicles",
+  //     "Dealing in Robotic Platform with remote and battery operated equipments",
+  //     "Roof, sidewall, underframe, for coach and locomotive",
+  //     "Biomass for all types of STP Plant",
+  //   ],
+  // },
   {
     label: "ACCESSORIES",
     baseHref: "/accessories",
@@ -48,6 +52,7 @@ const navItems = [
       "Head Assemblies",
       "Chain & Handle Sets",
       "PVC Water Tanks (optional inclusion if applicable)",
+      "More",
     ],
   },
   {
@@ -55,11 +60,12 @@ const navItems = [
     baseHref: "/services",
     dropdown: ["Manufacturing", "Consulting", "Repair"],
   },
-  { label: "HANDPUMP BLOG", href: "/blog" },
+  // { label: "HANDPUMP BLOG", href: "#" },
+  { label: "Achievement", href: "/achievement" },
   {
     label: "CONTACT US",
-    baseHref: "/contact",
-    dropdown: ["Email", "Phone", "Location"],
+    href: "/contact",
+    // dropdown: ["Email", "Phone", "Location"],
   },
 ];
 

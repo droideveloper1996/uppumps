@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import Toolbar from "@/Pages/ToolBar";
 import Footer from "@/Pages/Footer";
+import NewToolbar from "@/Pages/NewToolbar";
 
 const contactItems = [
   {
@@ -50,10 +51,10 @@ const contactItems = [
 
 export default function ContactUs() {
   return (
-    <section className="w-full bg-gray-100 pt-28">
-      <Toolbar />
+    <section className="w-full bg-gray-100 ">
+      <NewToolbar />
 
-      <div className="max-w-7xl mx-auto text-center px-4 md:px-8">
+      <div className="max-w-7xl mx-auto text-center px-4 md:px-8 mt-10">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

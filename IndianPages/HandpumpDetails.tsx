@@ -61,7 +61,7 @@ const contentMap: Record<
   },
 };
 
-export default function HandpumpDetails({ slug }: { slug: string }) {
+export default function HandpumpDetails({ slug }: { slug: any }) {
   const data = contentMap[slug];
 
   if (!data) {
