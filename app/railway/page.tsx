@@ -63,10 +63,14 @@ export default function RailwayPage() {
 
           <ContactTable />
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-6 shadow-md rounded-xl">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-10 border border-gray-200 rounded-xl">
+            <div className="sm:col-span-2  text-blue-800 mb-">
+              <p className="text-2xl font-bold">Connect With Us </p>
+              <p className="mt-5 text-sm text-gray-400">* Fields are mandatory </p>
+            </div>
             <div>
-              <label className="text-sm font-medium text-gray-700 block mb-1">
-                Your Name
+              <label className="text-sm font-bold text-gray-700 block mb-1">
+                Your Name <sup className="text-base text-red-500">* </sup>
               </label>
               <input
                 type="text"
@@ -79,8 +83,8 @@ export default function RailwayPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium text-gray-700 block mb-1">
-                Email Address
+              <label className="text-sm font-bold text-gray-700 block mb-1">
+                Email Address <sup className="text-base text-red-500">* </sup>
               </label>
               <input
                 type="email"
@@ -93,8 +97,9 @@ export default function RailwayPage() {
             </div>
 
             <div className="sm:col-span-2">
-              <label className="text-sm font-medium text-gray-700 block mb-1">
-                Mobile Number (with Country Code)
+              <label className="text-sm font-bold text-gray-700 block mb-1">
+                Mobile Number (with Country Code){" "}
+                <sup className="text-base text-red-500">* </sup>
               </label>
               <input
                 type="tel"
@@ -107,8 +112,8 @@ export default function RailwayPage() {
             </div>
 
             <div className="sm:col-span-2">
-              <label className="text-sm font-medium text-gray-700 block mb-1">
-                Message
+              <label className="text-sm font-bold text-gray-700 block mb-1">
+                Message <sup className="text-base text-red-500">* </sup>
               </label>
               <textarea
                 name="message"
@@ -120,7 +125,7 @@ export default function RailwayPage() {
               />
             </div>
 
-            <div className="sm:col-span-2 flex justify-center">
+            <div className="sm:col-span-2 flex justify-center my-10">
               <button
                 onClick={handleSubmit}
                 className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800 transition"

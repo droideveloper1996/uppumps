@@ -57,7 +57,7 @@ export default function RailwayProductTable() {
           {railwayProducts.map((item, idx) => (
             <tr
               key={idx}
-              className="border-b hover:bg-sky-50 transition duration-200"
+              className="border-b border-gray-200 hover:bg-gray-50 transition duration-200"
             >
               <td className="px-6 py-4 font-medium text-gray-800">{idx + 1}</td>{" "}
               <td className="px-6 py-4 font-medium text-gray-800">
