@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import ContactTable from "./ContactTable";
 import Image from "next/image";
-import web_logo from "../public/assets/logo/up_pump_logo Background Removed.png";
+import web_logo from "../public/assets/logo/U-2.png";
 import workers_img from "../public/assets/IndianPagesImage/spare-parts-manufacturing-2-mp4.webp";
 
 export default function HeroSection() {

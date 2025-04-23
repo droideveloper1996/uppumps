@@ -6,6 +6,99 @@ import Image from "next/image";
 
 const accessoryParts = [
   {
+    name: "Connecting Rods",
+    spec: null,
+
+    description: [
+      "Connecting rods are essential components in the hand pump assembly, responsible for transmitting mechanical motion from the handle to the pump piston inside the cylinder. U. P. Pumps manufactures connecting rods using high-tensile galvanized iron and stainless steel for maximum durability and corrosion resistance.",
+      "Each rod is precision-threaded and coupled with durable fasteners, ensuring a tight seal and minimal wear over time. Our rods are engineered to maintain alignment during pumping, reducing internal friction and improving water delivery efficiency.",
+      "Standard lengths are available to match India Mark II and Mark III specifications, while custom sizes can be produced based on project requirements. These rods are rigorously tested for tensile strength and zinc coating consistency to conform to IS:15500 standards.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/connecting_rods.jpg"],
+  },
+  {
+    name: "Valves",
+    spec: null,
+
+    description: [
+      "Valves are critical to regulating water flow and maintaining the pressure within hand pumps. We manufacture foot valves and check valves using high-quality stainless steel, bronze, and reinforced rubber to ensure leak-proof operation.",
+      "Our valves are designed for low maintenance and easy replacement, compatible with all major hand pump models including India Mark II, III, and Afridev. These components play a key role in sustaining consistent water output even under heavy usage.",
+      "Each valve undergoes hydraulic testing for backflow resistance and wear protection, and conforms to the Indian BIS and ISO 15500 certifications.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/valves.jpg"],
+  },
+  {
+    name: "Riser Pipes",
+    spec: null,
+
+    description: [
+      "Riser pipes form the vertical water column in hand pumps and play a major role in water delivery efficiency. U. P. Pumps supplies riser pipes fabricated from galvanized iron, stainless steel, and uPVC based on project-specific needs.",
+      "Our GI riser pipes are threaded with precision couplers to ensure secure joints that prevent leakage or pipe drop. Stainless steel variants are available for corrosive environments such as coastal and saline areas.",
+      "Each riser pipe is tested for pressure endurance and bore alignment, ensuring smooth installation with India Mark II/III or Afridev pumps.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/riser_pipes.jpg"],
+  },
+  {
+    name: "Cylinders",
+    spec: null,
+    description: [
+      "Pump cylinders house the piston and plunger and are the core of any hand pump. U. P. Pumps offers brass-lined cast iron and stainless steel cylinders for India Mark II, III, and Afridev models.",
+      "Our cylinders are engineered for precision sealing, high abrasion resistance, and easy disassembly for repairs. Each unit undergoes pressure testing at 200 PSI and is compliant with BIS and UNICEF procurement standards.",
+      "We also provide spare O-rings, piston seals, and cylinder covers as part of our maintenance kits to ensure your system remains operational for decades.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/cylinders.jpg"],
+  },
+  {
+    name: "Foot Valves",
+    spec: null,
+    description: [
+      "Foot valves prevent water from flowing back into the borewell and ensure the pump remains primed. We manufacture both brass and polymer foot valves equipped with rubber washers for a secure seal.",
+      "These valves are designed for deepwell applications and function effectively even with high sediment load. The self-closing mechanism ensures minimal backflow, protecting the riser assembly and enhancing pump performance.",
+      "Foot valves from U. P. Pumps are suitable for all ISI-marked hand pumps and are certified under ISO 15500.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/foot_valves.jpg"],
+  },
+  {
+    name: "Plungers",
+    spec: null,
+    description: [
+      "The plunger is the heart of the pumping mechanism, moving within the cylinder to draw water upward. Our plungers are built with nitrile rubber seals and stainless steel stems to offer long-lasting, smooth operation.",
+      "Designed for compatibility with Mark II and Mark III hand pumps, our plungers are made for easy installation and minimal field maintenance. The rubber components are oil-resistant and food-grade, ensuring safe potable water extraction.",
+      "Field-tested for over 5 lakh cycles, our plungers provide high efficiency in both shallow and deepwell installations.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/plungers.jpg"],
+  },
+  {
+    name: "Head Assemblies",
+    spec: null,
+    description: [
+      "Our head assemblies are cast from ductile iron or stainless steel for maximum strength and durability. These components house the handle and pivot point and are powder-coated for weather resistance.",
+      "Available in configurations for India Mark II, III, and custom variants, our head assemblies feature replaceable bearings, greased joints, and vibration-dampening hardware.",
+      "We also provide optional locking systems to prevent misuse in community installations.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/head_assembly.jpg"],
+  },
+  {
+    name: "Chain & Handle Sets",
+    spec: null,
+    description: [
+      "Our chain and handle sets are fabricated using forged steel and designed to resist bending under continuous use. These sets are ergonomically shaped for user comfort and are compatible with all U. P. Pumps hand pumps.",
+      "The chains are galvanized or stainless steel as per client requirement, and all pivot joints are lubricated and rust-protected. We also supply bushings and spares for long-term usability.",
+      "These components are easy to assemble and can be ordered as standalone sets or as part of full hand pump kits.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/chain_handle.jpg"],
+  },
+  {
+    name: "PVC Water Tanks",
+    spec: null,
+    description: [
+      "As an optional component in integrated water systems, our PVC tanks are made from food-grade virgin polymer with UV stabilization for outdoor durability.",
+      "Available in capacities ranging from 200L to 2000L, our tanks are fitted with ISI-marked inlet/outlet valves, air vents, and overflow mechanisms.",
+      "These tanks are compatible with rooftop installations and village-level water storage setups for hand pump-supported communities.",
+    ],
+    images: ["/assets/indianPagesImage/accessories/pvc_water_tank.jpg"],
+  },
+  {
     name: "Head Assembly",
     spec: "Standard & EDWP",
     images: [
@@ -757,7 +850,7 @@ export default function MoreAccessoriesDetails() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-10">
       <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-6 text-center">
-        Full Spare Parts List
+        Full Spare Parts & Accessories List
       </h2>
       <p className="text-center text-slate-700 mb-8">
         Full spare parts list available on request. For prices, specifications,
@@ -768,6 +861,7 @@ export default function MoreAccessoriesDetails() {
           <thead className="bg-gradient-to-r from-blue-600 to-sky-500 text-white">
             <tr>
               <th className="px-6 py-3 font-semibold">Sr. No.</th>
+              <th className="px-6 py-3 font-semibold">Part Image</th>
               <th className="px-6 py-3 font-semibold">Part Name</th>
               <th className="px-6 py-3 font-semibold">
                 Specification (If Applicable)
@@ -781,12 +875,36 @@ export default function MoreAccessoriesDetails() {
                 key={index}
                 className="border-b border-slate-200 hover:bg-sky-50 transition"
               >
-                <td className="px-6 py-3 whitespace-nowrap">{index + 1}</td>
-                <td className="px-6 py-3 whitespace-nowrap">{item.name}</td>
-                <td className="px-6 py-3 whitespace-nowrap">
+                {/* Serial Number */}
+                <td className="px-4 py-3 whitespace-nowrap text-sm">
+                  {index + 1}
+                </td>
+
+                {/* Product Image */}
+                <td className="px-4 py-3 whitespace-nowrap">
+                  {item.images && item.images.length > 0 && (
+                    <div className="w-20 h-20 relative rounded overflow-hidden border border-gray-200">
+                      <img
+                        src={item.images[0]}
+                        alt={`${item.name} image`}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  )}
+                </td>
+
+                {/* Product Name */}
+                <td className="px-4 py-3 whitespace-nowrap text-sm font-medium">
+                  {item.name}
+                </td>
+
+                {/* Specification */}
+                <td className="px-4 py-3 whitespace-nowrap text-sm">
                   {item.spec || "—"}
                 </td>
-                <td className="px-6 py-3 whitespace-nowrap">
+
+                {/* Know More Button */}
+                <td className="px-4 py-3 whitespace-nowrap text-sm">
                   <button
                     onClick={() => handleKnowMore(item)}
                     className="text-blue-700 hover:underline cursor-pointer"

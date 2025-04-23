@@ -20,12 +20,12 @@ export default function CustomBtn({
       whileTap={{ scale: 0.95 }}
       className={className}
     >
-      <Link
+      <a
         href={href}
         className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-2 rounded-full shadow transition-all"
       >
         {text}
-      </Link>
+      </a>
     </motion.div>
   );
 }

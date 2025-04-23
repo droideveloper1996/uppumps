@@ -11,68 +11,30 @@ const navItems = [
   { label: "HOME", href: "/" },
   {
     label: "HANDPUMPS",
-    baseHref: "/handpumps",
-    dropdown: [
-      "India Mark II",
-      "India Mark III (VLOM)",
-      "India Mark II & III with Force Lift Attachments",
-      "Afridev Pumps",
-      "Tara Hand Pumps",
-    ],
+    href: "/handpumps",
   },
   {
     label: "RAILWAY",
     href: "/railway",
   },
-  //  {
-  //   label: "RAILWAY",
-  //   baseHref: "/railway",
-  //   dropdown: [
-  //     "Rail Wheel",
-  //     "Complete Shell Assembly",
-  //     "Complete Coach",
-  //     "Small Track equipment for Railway",
-  //     "Heavy Rail-track manufacturing and consulting",
-  //     "All other Small and heavy Railway Equipment and vehicles",
-  //     "Dealing in Robotic Platform with remote and battery operated equipments",
-  //     "Roof, sidewall, underframe, for coach and locomotive",
-  //     "Biomass for all types of STP Plant",
-  //   ],
-  // },
   {
     label: "ACCESSORIES",
-    baseHref: "/accessories",
-    dropdown: [
-      "Connecting Rods",
-      "Valves",
-      "Riser Pipes",
-      "Plungers",
-      "Cylinders",
-      "Foot Valves",
-      "Head Assemblies",
-      "Chain & Handle Sets",
-      "PVC Water Tanks (optional inclusion if applicable)",
-      "More",
-    ],
+    href: "/accessories",
   },
   {
     label: "SERVICES",
-    baseHref: "/services",
-    dropdown: ["Manufacturing", "Consulting", "Repair"],
+    href: "/services",
   },
-  // { label: "HANDPUMP BLOG", href: "#" },
   { label: "Achievement", href: "/achievement" },
   {
     label: "CONTACT US",
     href: "/contact",
-    // dropdown: ["Email", "Phone", "Location"],
   },
 ];
 
 export default function NewToolbar() {
   return (
     <>
-      {/* Hero Section */}
       <section className="relative w-full h-[85vh] bg-black">
         <Image
           src="/assets/handpump-shikrawa-3.jpeg"
@@ -101,23 +63,11 @@ export default function NewToolbar() {
         </div>
       </section>
 
-      {/* Sticky Nav */}
       <div className="sticky top-0 z-50 bg-white shadow">
         <NavBar />
       </div>
     </>
   );
-}
-
-function slugify(text: string) {
-  return text
-    .toLowerCase()
-    .replace(/\s+/g, "-") // spaces to hyphens
-    .replace(/[()]/g, "") // remove brackets
-    .replace(/&/g, "and") // ampersand to 'and'
-    .replace(/[^\w\-]+/g, "") // remove non-word characters
-    .replace(/\-\-+/g, "-") // collapse multiple dashes
-    .trim();
 }
 
 function NavBar() {
@@ -127,7 +77,6 @@ function NavBar() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
       <div className="flex items-center justify-center">
-        {/* Mobile Toggle */}
         <div className="sm:hidden">
           <button onClick={toggleMobile}>
             <MdKeyboardDoubleArrowDown
@@ -140,42 +89,14 @@ function NavBar() {
 
         {/* Desktop Nav */}
         <ul className="hidden sm:flex flex-wrap gap-6 justify-center text-sm sm:text-base font-semibold text-gray-800">
-          {navItems.map((item, i) =>
-            item.dropdown ? (
-              <li
-                key={i}
-                className="relative group cursor-pointer hover:text-blue-600"
-              >
-                <div className="flex items-center gap-1">
-                  {item.label} <FaChevronDown className="text-xs mt-1" />
-                </div>
-                <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded z-50 min-w-[200px]">
-                  <ul className="py-3 px-2 text-sm text-gray-700">
-                    {item.dropdown.map((option, idx) => (
-                      <li
-                        key={idx}
-                        className="hover:text-blue-600 py-2 px-2 transition hover:bg-sky-100/60"
-                      >
-                        <Link
-                          href={`${item.baseHref || ""}/${slugify(option)}`}
-                          className="block w-full"
-                        >
-                          {option}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            ) : (
-              <li
-                key={i}
-                className="cursor-pointer hover:text-blue-600 transition"
-              >
-                <Link href={item.href}>{item.label}</Link>
-              </li>
-            )
-          )}
+          {navItems.map((item, i) => (
+            <li
+              key={i}
+              className="cursor-pointer hover:text-blue-600 transition"
+            >
+              <Link href={item.href}>{item.label}</Link>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -188,32 +109,11 @@ function NavBar() {
             exit={{ height: 0, opacity: 0 }}
             className="sm:hidden mt-4 bg-white rounded-md shadow-md p-4 text-sm font-semibold text-gray-800 space-y-4"
           >
-            {navItems.map((item, i) =>
-              item.dropdown ? (
-                <li key={i}>
-                  <details>
-                    <summary className="cursor-pointer hover:text-blue-600 flex justify-between items-center">
-                      {item.label} <FaChevronDown className="text-xs" />
-                    </summary>
-                    <ul className="ml-4 mt-2 space-y-1 text-gray-600">
-                      {item.dropdown.map((option, idx) => (
-                        <li key={idx} className="hover:text-blue-600">
-                          <Link
-                            href={`${item.baseHref || ""}/${slugify(option)}`}
-                          >
-                            {option}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                </li>
-              ) : (
-                <li key={i} className="hover:text-blue-600">
-                  <Link href={item.href}>{item.label}</Link>
-                </li>
-              )
-            )}
+            {navItems.map((item, i) => (
+              <li key={i} className="hover:text-blue-600">
+                <Link href={item.href}>{item.label}</Link>
+              </li>
+            ))}
           </motion.ul>
         )}
       </AnimatePresence>

@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import web_logo from "@/public/assets/logo/up_pump_logo Background Removed.png";
+import web_logo from "@/public/assets/logo/U-2.png";
 
 export default function RailwayHero() {
   return (

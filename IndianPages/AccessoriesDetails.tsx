@@ -102,7 +102,8 @@ const contentMap: Record<
   },
 };
 
-export default function AccessoriesDetails({ slug }: { slug: any }) {
+export default function AccessoriesDetails({ slug }: { slug: string }) {
+  console.log("Slug", slug);
   const data = contentMap[slug];
 
   if (!data) {
