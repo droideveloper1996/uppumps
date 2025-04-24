@@ -3,19 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const accessoryParts = [
-  {
-    name: "Connecting Rods",
-    spec: null,
-
-    description: [
-      "Connecting rods are essential components in the hand pump assembly, responsible for transmitting mechanical motion from the handle to the pump piston inside the cylinder. U. P. Pumps manufactures connecting rods using high-tensile galvanized iron and stainless steel for maximum durability and corrosion resistance.",
-      "Each rod is precision-threaded and coupled with durable fasteners, ensuring a tight seal and minimal wear over time. Our rods are engineered to maintain alignment during pumping, reducing internal friction and improving water delivery efficiency.",
-      "Standard lengths are available to match India Mark II and Mark III specifications, while custom sizes can be produced based on project requirements. These rods are rigorously tested for tensile strength and zinc coating consistency to conform to IS:15500 standards.",
-    ],
-    images: ["/assets/indianPagesImage/accessories/connecting_rods.jpg"],
-  },
   {
     name: "Valves",
     spec: null,
@@ -25,7 +15,7 @@ const accessoryParts = [
       "Our valves are designed for low maintenance and easy replacement, compatible with all major hand pump models including India Mark II, III, and Afridev. These components play a key role in sustaining consistent water output even under heavy usage.",
       "Each valve undergoes hydraulic testing for backflow resistance and wear protection, and conforms to the Indian BIS and ISO 15500 certifications.",
     ],
-    images: ["/assets/indianPagesImage/accessories/valves.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/valves.jpg"],
   },
   {
     name: "Riser Pipes",
@@ -36,7 +26,7 @@ const accessoryParts = [
       "Our GI riser pipes are threaded with precision couplers to ensure secure joints that prevent leakage or pipe drop. Stainless steel variants are available for corrosive environments such as coastal and saline areas.",
       "Each riser pipe is tested for pressure endurance and bore alignment, ensuring smooth installation with India Mark II/III or Afridev pumps.",
     ],
-    images: ["/assets/indianPagesImage/accessories/riser_pipes.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/riser_pipes.jpeg"],
   },
   {
     name: "Cylinders",
@@ -46,7 +36,7 @@ const accessoryParts = [
       "Our cylinders are engineered for precision sealing, high abrasion resistance, and easy disassembly for repairs. Each unit undergoes pressure testing at 200 PSI and is compliant with BIS and UNICEF procurement standards.",
       "We also provide spare O-rings, piston seals, and cylinder covers as part of our maintenance kits to ensure your system remains operational for decades.",
     ],
-    images: ["/assets/indianPagesImage/accessories/cylinders.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/cylinders.jpg"],
   },
   {
     name: "Foot Valves",
@@ -56,7 +46,7 @@ const accessoryParts = [
       "These valves are designed for deepwell applications and function effectively even with high sediment load. The self-closing mechanism ensures minimal backflow, protecting the riser assembly and enhancing pump performance.",
       "Foot valves from U. P. Pumps are suitable for all ISI-marked hand pumps and are certified under ISO 15500.",
     ],
-    images: ["/assets/indianPagesImage/accessories/foot_valves.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/foot_valves.avif"],
   },
   {
     name: "Plungers",
@@ -66,7 +56,7 @@ const accessoryParts = [
       "Designed for compatibility with Mark II and Mark III hand pumps, our plungers are made for easy installation and minimal field maintenance. The rubber components are oil-resistant and food-grade, ensuring safe potable water extraction.",
       "Field-tested for over 5 lakh cycles, our plungers provide high efficiency in both shallow and deepwell installations.",
     ],
-    images: ["/assets/indianPagesImage/accessories/plungers.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/plungers.jpg"],
   },
   {
     name: "Head Assemblies",
@@ -76,7 +66,7 @@ const accessoryParts = [
       "Available in configurations for India Mark II, III, and custom variants, our head assemblies feature replaceable bearings, greased joints, and vibration-dampening hardware.",
       "We also provide optional locking systems to prevent misuse in community installations.",
     ],
-    images: ["/assets/indianPagesImage/accessories/head_assembly.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/head_assembly.jpg"],
   },
   {
     name: "Chain & Handle Sets",
@@ -86,7 +76,7 @@ const accessoryParts = [
       "The chains are galvanized or stainless steel as per client requirement, and all pivot joints are lubricated and rust-protected. We also supply bushings and spares for long-term usability.",
       "These components are easy to assemble and can be ordered as standalone sets or as part of full hand pump kits.",
     ],
-    images: ["/assets/indianPagesImage/accessories/chain_handle.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/chain_handle.jpg"],
   },
   {
     name: "PVC Water Tanks",
@@ -96,15 +86,12 @@ const accessoryParts = [
       "Available in capacities ranging from 200L to 2000L, our tanks are fitted with ISI-marked inlet/outlet valves, air vents, and overflow mechanisms.",
       "These tanks are compatible with rooftop installations and village-level water storage setups for hand pump-supported communities.",
     ],
-    images: ["/assets/indianPagesImage/accessories/pvc_water_tank.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/pvc_water_tank.jpg"],
   },
   {
     name: "Head Assembly",
     spec: "Standard & EDWP",
-    images: [
-      "/assets/parts/head_assembly_1.jpg",
-      "/assets/parts/head_assembly_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/head_assembly.jpg"],
     description: [
       "The Head Assembly is one of the most critical structural components of a hand pump, responsible for housing and aligning all key moving parts such as the handle, axle, and chain drive system.",
       "Manufactured from high-grade cast iron and hot-dip galvanized to withstand extreme environmental conditions, it ensures robust performance in both deepwell and extra deepwell configurations (Standard & EDWP).",
@@ -117,20 +104,11 @@ const accessoryParts = [
       "Ideal for long-term installations in schools, healthcare centers, and community water schemes where reliability is non-negotiable.",
     ],
   },
+
   {
     name: "Cylinder Assembly",
     spec: "Standard & EDWP",
-    images: ["/assets/parts/cylinder_assembly_1.jpg"],
-    description: [
-      "The Cylinder Assembly ensures the pressure mechanism and water lifting.",
-      "Designed with brass liners for long life and minimum wear and tear.",
-      "Compatible with all ISI-marked deepwell pump systems.",
-    ],
-  },
-  {
-    name: "Cylinder Assembly",
-    spec: "Standard & EDWP",
-    images: ["/assets/parts/cylinder_assembly_1.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/cylinder_assembly_1.jpg"],
     description: [
       "The Cylinder Assembly is the hydraulic heart of a hand pump, designed to generate suction and pressure that lifts water from deep aquifers to the surface.",
       "Constructed using precision-cast cast iron or mild steel bodies, the interior of the cylinder is lined with high-quality brass to reduce friction and ensure corrosion resistance over prolonged use.",
@@ -146,7 +124,9 @@ const accessoryParts = [
   {
     name: "Plunger Valve Assembly",
     spec: "EDWP",
-    images: ["/assets/parts/plunger_valve_assembly.jpg"],
+    images: [
+      "/assets/IndianPagesImage/AccessoryParts/plunger_valve_assembly.jpg",
+    ],
     description: [
       "The Plunger Valve Assembly is a vital moving component in hand pump systems, responsible for maintaining upward water pressure during the lifting stroke.",
       "Specially engineered for EDWP (Extra Deepwell Pumps), it can withstand high hydraulic loads at greater depths, ensuring consistent performance under challenging ground water levels.",
@@ -162,7 +142,9 @@ const accessoryParts = [
   {
     name: "Lower Valve Assembly",
     spec: null,
-    images: ["/assets/parts/lower_valve_assembly.jpg"],
+    images: [
+      "/assets/IndianPagesImage/AccessoryParts/lower_valve_assembly.jpg",
+    ],
     description: [
       "The Lower Valve Assembly is an essential non-return valve located at the base of the pump cylinder, ensuring unidirectional water flow during pumping operations.",
       "Its primary function is to prevent backflow of water into the borehole after each piston cycle, maintaining pressure in the riser pipe and enabling efficient water discharge on the next stroke.",
@@ -178,7 +160,7 @@ const accessoryParts = [
   {
     name: "Head Box",
     spec: "Standard & EDWP",
-    images: ["/assets/parts/head_box_1.jpg", "/assets/parts/head_box_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/head_box.jpg"],
     description: [
       "The Head Box is a critical structural component in hand pumps that connects the handle, axle, and water outlet system into a single functional unit.",
       "Constructed using heavy-duty cast iron or mild steel, the Head Box is designed to endure mechanical stress from thousands of daily pumping cycles.",
@@ -194,10 +176,7 @@ const accessoryParts = [
   {
     name: "Handle",
     spec: "Standard (Hot Dip Galvanised), EDWP",
-    images: [
-      "/assets/parts/handle_standard_1.jpg",
-      "/assets/parts/handle_edwp_1.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/handle_standard_1.jpg"],
     description: [
       "The Handle is the primary user interface of a handpump, designed to provide ergonomic and efficient water lifting through a reciprocating motion.",
       "Crafted from heavy-duty mild steel, our handles are engineered to endure high mechanical stress and long-term use without deformation.",
@@ -214,11 +193,7 @@ const accessoryParts = [
   {
     name: "Stand",
     spec: "Telescopic, Normal, EDWP",
-    images: [
-      "/assets/parts/stand_normal.jpg",
-      "/assets/parts/stand_telescopic.jpg",
-      "/assets/parts/stand_edwp.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/stand_normal.webp"],
     description: [
       "The Stand is the foundational base of the handpump, providing vertical support and structural stability for mounting the Head Assembly and other upper components.",
       "Our handpump stands are available in three major configurations: Normal, Telescopic, and EDWP (Extra Deepwell Pump), each optimized for different depth and terrain conditions.",
@@ -235,10 +210,7 @@ const accessoryParts = [
   {
     name: "Water Tank",
     spec: "Optional",
-    images: [
-      "/assets/parts/water_tank_1.jpg",
-      "/assets/parts/water_tank_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/water_tank.jpg"],
     description: [
       "The Water Tank is an optional but highly beneficial addition to handpump systems, designed to collect and temporarily store water immediately after pumping, providing convenient access without repetitive effort.",
       "It is ideal for schools, community centers, and rural households where frequent use or storage of water for cooking, washing, or sanitation is required.",
@@ -255,10 +227,7 @@ const accessoryParts = [
   {
     name: "Plunger Rod",
     spec: "Standard & EDWP",
-    images: [
-      "/assets/parts/plunger_rod_1.jpg",
-      "/assets/parts/plunger_rod_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/plungers.jpg"],
     description: [
       "The Plunger Rod is a key internal component of the handpump mechanism that connects the handle movement to the plunger inside the cylinder, enabling the actual lifting of water.",
       "Constructed from high-tensile galvanized or stainless steel, our plunger rods are engineered to handle high stress during repetitive pumping, especially in deep and extra-deep well installations.",
@@ -274,7 +243,7 @@ const accessoryParts = [
   {
     name: "Axle",
     spec: null,
-    images: ["/assets/parts/axle_1.jpg", "/assets/parts/axle_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/axle_1.jpg"],
     description: [
       "The Axle is a crucial mechanical pivot within the handpump's head assembly, facilitating the smooth movement of the handle and transfer of force to the plunger rod.",
       "Manufactured from high-carbon steel or stainless steel, the axle is designed for maximum load-bearing capacity and minimal deflection under repetitive usage.",
@@ -290,10 +259,7 @@ const accessoryParts = [
   {
     name: "Third Plate",
     spec: null,
-    images: [
-      "/assets/parts/third_plate_1.jpg",
-      "/assets/parts/third_plate_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/third_plate_1.jpeg"],
     description: [
       "The Third Plate is an essential structural support component within the handpump head assembly, providing reinforcement and ensuring alignment of moving parts.",
       "Fabricated from high-grade steel with precise laser-cut dimensions, the Third Plate maintains the parallelism and stability required for long-term pump function.",
@@ -309,10 +275,7 @@ const accessoryParts = [
   {
     name: "Connecting Rod",
     spec: null,
-    images: [
-      "/assets/parts/connecting_rod_1.jpg",
-      "/assets/parts/connecting_rod_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/CR1.png"],
     description: [
       "The Connecting Rod serves as the critical linkage between the handpump's handle mechanism and the plunger assembly deep within the cylinder.",
       "It transfers mechanical energy from user input at the handle to the reciprocating motion of the plunger, enabling efficient water lifting with minimal friction loss.",
@@ -329,7 +292,7 @@ const accessoryParts = [
   {
     name: "Socket",
     spec: null,
-    images: ["/assets/parts/socket_1.jpg", "/assets/parts/socket_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/socket_1.jpg"],
     description: [
       "The Socket is a vital coupling component that connects individual segments of connecting rods or riser pipes, ensuring secure and aligned transmission of mechanical force within the handpump system.",
       "Designed with precision threading, the socket allows easy assembly and disassembly during pump installation or maintenance without the risk of thread slippage.",
@@ -345,7 +308,7 @@ const accessoryParts = [
   {
     name: "Bearing",
     spec: null,
-    images: ["/assets/parts/bearing_1.jpg", "/assets/parts/bearing_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/bearing_1.jpg"],
     description: [
       "The Bearing is a critical rotating element within the handpump's head assembly that facilitates smooth motion of the handle mechanism and minimizes wear caused by continuous operation.",
       "Precision-manufactured to ensure low friction, the bearing supports axial and radial loads while maintaining alignment during each pump stroke.",
@@ -361,7 +324,7 @@ const accessoryParts = [
   {
     name: "Coupler",
     spec: null,
-    images: ["/assets/parts/coupler_1.jpg", "/assets/parts/coupler_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/coupler_1.webp"],
     description: [
       "The Coupler is a key connector used to join plunger rods or riser pipes in a handpump assembly, ensuring structural continuity and efficient transmission of force during pumping action.",
       "Fabricated from high-strength mild steel or stainless steel, the coupler is designed to withstand repetitive mechanical stress and axial load without deformation or thread stripping.",
@@ -377,7 +340,7 @@ const accessoryParts = [
   {
     name: "Hex Bolt",
     spec: "M12x40, M12x20",
-    images: ["/assets/parts/hex_bolt_1.jpg", "/assets/parts/hex_bolt_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/hex_bolt_1.jpg"],
     description: [
       "The Hex Bolt is an essential fastening component used extensively in the assembly of handpump structures, offering secure joints between critical load-bearing parts such as the head assembly, cylinder, and stand base.",
       "Our Hex Bolts are manufactured using high-tensile grade carbon steel or stainless steel, ensuring durability, anti-rust protection, and resistance to mechanical fatigue.",
@@ -393,7 +356,10 @@ const accessoryParts = [
   {
     name: "Hex Nut",
     spec: "M12x1.75",
-    images: ["/assets/parts/hex_nut_1.jpg", "/assets/parts/hex_nut_2.jpg"],
+    images: [
+      "/assets/IndianPagesImage/AccessoryParts/hex_nut_1.jpg",
+      "/assets/IndianPagesImage/AccessoryParts/hex_nut_2.jpg",
+    ],
     description: [
       "The M12x1.75 Hex Nut is a critical fastener used in conjunction with M12 bolts to securely assemble structural components of handpumps, including head assemblies, stands, and connecting rods.",
       "Manufactured from high-grade carbon steel or stainless steel, these nuts offer excellent durability, corrosion resistance, and compatibility with rural and outdoor environments where pumps are frequently exposed to moisture and dust.",
@@ -409,10 +375,7 @@ const accessoryParts = [
   {
     name: "HT Bolt",
     spec: "M10x40",
-    images: [
-      "/assets/parts/ht_bolt_m10x40_1.jpg",
-      "/assets/parts/ht_bolt_m10x40_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/ht_bolt_m10x40_1.webp"],
     description: [
       "The HT (High Tensile) Bolt M10x40 is a critical fastener component used in assembling high-load zones of handpump systems, particularly where secure clamping is necessary between structural parts such as the head assembly, flange mounts, and connecting frame.",
       "Measuring 10mm in diameter and 40mm in length, this bolt is engineered with high tensile strength steel (Grade 8.8 or higher), offering enhanced load-bearing capacity, resistance to shearing forces, and long-term mechanical integrity under repetitive stress.",
@@ -428,10 +391,7 @@ const accessoryParts = [
   {
     name: "Nylock Nut",
     spec: "M10",
-    images: [
-      "/assets/parts/nylock_nut_m10_1.jpg",
-      "/assets/parts/nylock_nut_m10_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/nylock_nut_m10_1.png"],
     description: [
       "The M10 Nylock Nut is a self-locking fastening component designed to resist loosening under vibration and torque, making it ideal for secure assemblies in handpump systems subjected to regular mechanical movement.",
       "This nut incorporates a nylon insert collar that deforms elastically over the mating threads. This mechanism ensures a tight and reliable grip, preventing the nut from backing off, even in high-impact or frequently operated pump assemblies.",
@@ -446,10 +406,7 @@ const accessoryParts = [
   {
     name: "Chain with Coupling",
     spec: "Regular & Roller Chain",
-    images: [
-      "/assets/parts/chain_with_coupling_1.jpg",
-      "/assets/parts/chain_with_coupling_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/chain_handle.jpg"],
     description: [
       "The Chain with Coupling is a vital linkage mechanism in handpump systems, connecting the operating handle to the plunger or axle inside the head assembly. It plays a key role in converting manual force into vertical piston motion for water extraction.",
       "We offer both Regular and Roller Chain variants to suit different pump designs and load conditions. The Regular Chain is cost-effective and suitable for standard applications, while the Roller Chain provides smoother operation, longer wear resistance, and greater mechanical efficiency.",
@@ -465,7 +422,7 @@ const accessoryParts = [
   {
     name: "Washer",
     spec: null,
-    images: ["/assets/parts/washer_1.jpg", "/assets/parts/washer_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/washer_1.jpg"],
     description: [
       "The Washer is a simple yet critical component used in handpump assemblies to evenly distribute load across bolted joints and prevent surface damage due to tightening forces.",
       "Manufactured from high-strength carbon steel or stainless steel, our washers are treated with anti-corrosive coatings such as zinc plating, making them ideal for outdoor installations and humid environments.",
@@ -481,10 +438,7 @@ const accessoryParts = [
   {
     name: "Reducer Cap",
     spec: null,
-    images: [
-      "/assets/parts/reducer_cap_1.jpg",
-      "/assets/parts/reducer_cap_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/reducer_cap_1.jpg"],
     description: [
       "The Reducer Cap is an essential component used to join and transition between pipes or fittings of different diameters in handpump assemblies and water pipelines.",
       "Engineered for a secure fit and leak-proof performance, it ensures the proper alignment and smooth flow of water from the pump to outlet lines, especially in installations where pipe size changes are necessary.",
@@ -501,8 +455,7 @@ const accessoryParts = [
     name: "Cylinder Body with Brass Liner",
     spec: "Standard & EDWP",
     images: [
-      "/assets/parts/cylinder_brass_liner_1.jpg",
-      "/assets/parts/cylinder_brass_liner_2.jpg",
+      "/assets/IndianPagesImage/AccessoryParts/cylinder_brass_liner_1.jpg",
     ],
     description: [
       "The Cylinder Body with Brass Liner is a core component in deepwell and extra deepwell hand pumps, responsible for withstanding the internal hydraulic pressure generated during water extraction.",
@@ -520,10 +473,7 @@ const accessoryParts = [
   {
     name: "Brass Liner",
     spec: null,
-    images: [
-      "/assets/parts/brass_liner_1.jpg",
-      "/assets/parts/brass_liner_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/brass_liner_1.jpg"],
     description: [
       "The Brass Liner is an integral part of the pump cylinder assembly, designed to provide a smooth, corrosion-resistant surface for the plunger to operate against during water extraction cycles.",
       "Manufactured from high-quality, lead-free brass, the liner offers excellent wear resistance, minimizing friction between moving components and significantly extending the life of the pump.",
@@ -540,10 +490,7 @@ const accessoryParts = [
   {
     name: "Plunger Yoke Body",
     spec: null,
-    images: [
-      "/assets/parts/plunger_yoke_body_1.jpg",
-      "/assets/parts/plunger_yoke_body_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/plunger_yoke_body_1.jpg"],
     description: [
       "The Plunger Yoke Body is a mechanical linkage component that connects the plunger rod to the handle mechanism, playing a critical role in the reciprocating action of the handpump.",
       "Manufactured from high-strength ductile cast iron or forged steel, the yoke body ensures consistent and balanced motion transmission even under heavy load conditions in deepwell operations.",
@@ -561,8 +508,7 @@ const accessoryParts = [
     name: "Plunger Upper Valve",
     spec: null,
     images: [
-      "/assets/parts/plunger_upper_valve_1.jpg",
-      "/assets/parts/plunger_upper_valve_2.jpg",
+      "/assets/IndianPagesImage/AccessoryParts/plunger_upper_valve_1.webp",
     ],
     description: [
       "The Plunger Upper Valve is a critical internal component situated within the plunger assembly that allows upward water flow while preventing reverse flow during the downstroke.",
@@ -580,10 +526,7 @@ const accessoryParts = [
   {
     name: "Bucket Spacer",
     spec: null,
-    images: [
-      "/assets/parts/bucket_spacer_1.jpg",
-      "/assets/parts/bucket_spacer_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/bucket_spacer_1.jpg"],
     description: [
       "The Bucket Spacer is a precision-engineered component located between the plunger and rubber bucket in a handpump system, designed to ensure proper alignment and pressure distribution during operation.",
       "Its primary function is to maintain the correct distance between the bucket and valve seat, ensuring smooth vertical movement and optimal sealing during the up and down strokes of the handpump.",
@@ -600,10 +543,7 @@ const accessoryParts = [
   {
     name: "Lower Spacer",
     spec: "EDWP",
-    images: [
-      "/assets/parts/lower_spacer_1.jpg",
-      "/assets/parts/lower_spacer_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/lower_spacer_1.jpg"],
     description: [
       "The Lower Spacer is a specialized component in EDWP (Extra Deep Well Pump) configurations, strategically positioned at the bottom section of the plunger assembly to ensure accurate alignment and effective pressure regulation.",
       "It serves as a mechanical buffer between the cylinder and valve assemblies, absorbing pressure shocks during aggressive pumping actions and preventing component misalignment under deepwell conditions.",
@@ -620,7 +560,7 @@ const accessoryParts = [
   {
     name: "Follower",
     spec: "Standard & EDWP",
-    images: ["/assets/parts/follower_1.jpg", "/assets/parts/follower_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/follower_1.jpg"],
     description: [
       "The Follower is a critical component in the plunger assembly of hand pumps, designed to ensure precise vertical alignment and uniform pressure transmission during operation. It acts as the connecting interface between the plunger rod and the valve assembly, maintaining consistent axial movement throughout each pumping cycle.",
       "Constructed from high-grade galvanized iron or stainless steel for EDWP applications, the Follower is engineered to withstand repetitive mechanical loads and long-term submersion in water. Its structural integrity directly impacts the longevity of both the plunger and valve components, particularly in deepwell installations where performance is paramount.",
@@ -634,10 +574,7 @@ const accessoryParts = [
   {
     name: "Check Valve Guide",
     spec: null,
-    images: [
-      "/assets/parts/check_valve_guide_1.jpg",
-      "/assets/parts/check_valve_guide_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/check_valve_guide_1.jpg"],
     description: [
       "The Check Valve Guide is an integral part of the internal hydraulic control system within hand pumps, providing directional alignment and stability for the check valve disc or ball. Its primary function is to guide the valve movement within a defined path, ensuring accurate opening and closing during each pumping stroke.",
       "This component plays a vital role in preventing reverse water flow into the borehole by allowing the valve to seat perfectly after each upward stroke. Misalignment or wear in the guide can result in leakage, pressure loss, and inefficient water delivery—making its precision crucial to the system’s reliability.",
@@ -651,10 +588,7 @@ const accessoryParts = [
   {
     name: "Check Valve Seat",
     spec: null,
-    images: [
-      "/assets/parts/check_valve_seat_1.jpg",
-      "/assets/parts/check_valve_seat_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/check_valve_seat_1.jpg"],
     description: [
       "The Check Valve Seat forms the sealing base on which the check valve rests, creating a one-way flow mechanism that allows water to move upward while preventing it from flowing back into the borewell. This component is essential for maintaining the hydraulic integrity and consistent pressure required for deepwell pump operation.",
       "Crafted with high-precision molds and machined to exact tolerances, the valve seat is typically made of durable non-corrosive metals such as stainless steel or brass. In some cases, high-strength polymer variants are used to resist aggressive water chemistry and reduce weight without sacrificing strength.",
@@ -668,10 +602,7 @@ const accessoryParts = [
   {
     name: "Rubber Sheet",
     spec: null,
-    images: [
-      "/assets/parts/rubber_sheet_1.jpg",
-      "/assets/parts/rubber_sheet_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/rubber_sheet_1.jpg"],
     description: [
       "The Rubber Sheet is a vital sealing component used across various sections of a handpump, including valves and gaskets, to prevent leakage and maintain internal water pressure during operation. Made from industrial-grade rubber, it withstands compression and maintains elasticity even under high mechanical stress.",
       "U. P. Pumps supplies rubber sheets that are precision-cut and formulated to resist water absorption, microbial growth, and mineral degradation. These sheets are compatible with both India Mark II and III models, as well as other community-use pump variants.",
@@ -682,7 +613,7 @@ const accessoryParts = [
   {
     name: "Retainer",
     spec: null,
-    images: ["/assets/parts/retainer_1.jpg", "/assets/parts/retainer_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/retainer_1.jpg"],
     description: [
       "The Retainer is a small yet essential mechanical part used to hold various internal components such as rubber washers, seals, or springs in place within the pump structure. It ensures consistent alignment, secure seating, and resistance against vibration or displacement caused by repetitive handpump strokes.",
       "Fabricated from corrosion-resistant stainless steel or durable brass, the Retainer is designed to endure years of service without distortion. It plays a critical role in stabilizing the internal valve assemblies and maintaining consistent hydraulic response in deepwell pumps.",
@@ -693,10 +624,7 @@ const accessoryParts = [
   {
     name: "Rubber Bucket",
     spec: null,
-    images: [
-      "/assets/parts/rubber_bucket_1.jpg",
-      "/assets/parts/rubber_bucket_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/rubber_bucket_1.jpg"],
     description: [
       "The Rubber Bucket is a crucial component mounted inside the plunger of deepwell hand pumps like the India Mark II and Mark III. It acts as a dynamic sealing and suction element, helping draw water upward during the pump stroke by creating a vacuum within the cylinder.",
       "Manufactured using high-tensile natural or synthetic rubber compounds, our Rubber Buckets maintain their elasticity and form even after thousands of pump cycles. Their conical shape allows them to expand and contract with water pressure, delivering optimal suction and flow efficiency.",
@@ -707,10 +635,7 @@ const accessoryParts = [
   {
     name: "Sealing Ring",
     spec: null,
-    images: [
-      "/assets/parts/sealing_ring_1.jpg",
-      "/assets/parts/sealing_ring_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/sealing_ring_1.jpeg"],
     description: [
       "The Sealing Ring is an essential gasket-like component used in various pump junctions to prevent water leakage and maintain air-tight pressure throughout the cylinder and riser pipe assembly. Positioned between metallic parts, it ensures a tight seal under hydraulic stress.",
       "Our Sealing Rings are molded from premium-grade rubber compounds with high resistance to abrasion, ozone exposure, and water scaling. They are designed to retain sealing efficiency even in high-load cycles and continuous water flow conditions.",
@@ -722,8 +647,7 @@ const accessoryParts = [
     name: "Rubber Seating Upper Valve",
     spec: null,
     images: [
-      "/assets/parts/rubber_seating_upper_valve_1.jpg",
-      "/assets/parts/rubber_seating_upper_valve_2.jpg",
+      "/assets/IndianPagesImage/AccessoryParts/rubber_seating_upper_valve_1.jpg",
     ],
     description: [
       "The Rubber Seating Upper Valve is a precision-molded rubber component placed inside the plunger or head assembly of a handpump. It provides an essential sealing interface that prevents the backflow of water and maintains one-directional flow during pump operation.",
@@ -736,8 +660,7 @@ const accessoryParts = [
     name: "Rubber Seating Lower Valve",
     spec: null,
     images: [
-      "/assets/parts/rubber_seating_lower_valve_1.jpg",
-      "/assets/parts/rubber_seating_lower_valve_2.jpg",
+      "/assets/IndianPagesImage/AccessoryParts/rubber_seating_lower_valve_1.jpg",
     ],
     description: [
       "The Rubber Seating Lower Valve is an integral part of the pump's check valve system, positioned at the base of the cylinder to control water retention after each pumping cycle. It ensures that water drawn into the cylinder does not return to the borehole when the handle resets.",
@@ -750,7 +673,7 @@ const accessoryParts = [
   {
     name: "T-Bar",
     spec: "EDWP",
-    images: ["/assets/parts/tbar_1.jpg", "/assets/parts/tbar_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/tbar_1.jpg"],
     description: [
       "The T-Bar is a crucial mechanical component of the Extra Deep Well Pump (EDWP) assembly, functioning as the connecting link between the pump's handle mechanism and the plunger rod. Its primary purpose is to ensure smooth transmission of force from the user's input to the piston system deep inside the borewell.",
       "Engineered to handle high vertical loads and repetitive stresses, the T-Bar in EDWP configurations is manufactured using hot-dip galvanized or stainless steel to withstand rust, wear, and prolonged exposure to moisture and contaminants.",
@@ -762,10 +685,7 @@ const accessoryParts = [
   {
     name: "Counter Weight",
     spec: "EDWP",
-    images: [
-      "/assets/parts/counter_weight_1.jpg",
-      "/assets/parts/counter_weight_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/counter_weight_1.jpg"],
     description: [
       "The Counter Weight used in EDWP (Extra Deep Well Pump) systems is a balancing component designed to offset the manual effort required to lift water from deep aquifers. It is strategically mounted on the opposite end of the handle to counterbalance the load from the riser rods and water column.",
       "Crafted from high-density cast iron or steel, the counter weight is calibrated precisely to match the operational torque of the pump. This ensures smooth, fatigue-free operation, especially in community installations where usage frequency is high.",
@@ -777,10 +697,7 @@ const accessoryParts = [
   {
     name: "Upper Valve Guide w/ Rubber Seat",
     spec: null,
-    images: [
-      "/assets/parts/upper_valve_guide_1.jpg",
-      "/assets/parts/upper_valve_guide_2.jpg",
-    ],
+    images: ["/assets/IndianPagesImage/AccessoryParts/upper_valve_guide_1.jpg"],
     description: [
       "The Upper Valve Guide with Rubber Seat is a precision-engineered component used to guide and secure the upper valve mechanism within the handpump’s plunger or head assembly. It ensures consistent valve alignment, preventing wobble or misplacement during continuous operation.",
       "This component plays a critical role in controlling water flow during the upward stroke by offering stable seating for the rubber valve. The integrated rubber seat provides a leak-proof seal, ensuring that water remains inside the riser pipes and doesn't backflow between strokes.",
@@ -792,7 +709,7 @@ const accessoryParts = [
   {
     name: "Tool Set",
     spec: "For Installation & Major Repair",
-    images: ["/assets/parts/tool_set_1.jpg", "/assets/parts/tool_set_2.jpg"],
+    images: ["/assets/IndianPagesImage/AccessoryParts/tool_set_1.jpg"],
     description: [
       "The Tool Set for Installation & Major Repair is a comprehensive kit designed specifically for on-site servicing and assembly of handpumps including India Mark II, Mark III, Afridev, and EDWP variants.",
       "Each tool in the kit is manufactured from high-tensile carbon steel with anti-corrosive coating to withstand harsh environmental conditions and frequent usage in the field.",
@@ -807,6 +724,8 @@ const accessoryParts = [
 export default function MoreAccessoriesDetails() {
   const [showModal, setShowModal] = useState(false);
   const [selectedPart, setSelectedPart] = useState<any>(null);
+  const [showFormModal, setShowFormModal] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -887,7 +806,7 @@ export default function MoreAccessoriesDetails() {
                       <img
                         src={item.images[0]}
                         alt={`${item.name} image`}
-                        className="object-cover w-full h-full"
+                        className="object-fill w-full h-full"
                       />
                     </div>
                   )}
@@ -928,6 +847,11 @@ export default function MoreAccessoriesDetails() {
           >
             <div className="bg-white max-w-4xl w-full mx-4 my-12 h-[90vh] rounded-xl shadow-lg relative flex flex-col">
               {/* Scrollable Content */}
+
+              <IoMdCloseCircle
+                onClick={() => setShowModal(false)}
+                className="text-4xl absolute top-3 right-3 hover:rotate-180 duration-200 hover:scale-110 text-gray-600 hover:text-gray-500"
+              />
               <div className="overflow-y-auto p-8 flex-1">
                 <h3 className="text-2xl font-bold text-blue-700 mb-4">
                   {selectedPart.name} Details
@@ -958,7 +882,7 @@ export default function MoreAccessoriesDetails() {
                 </div>
 
                 {/* 📝 Clause Section */}
-                <div className="bg-blue-50 border-l-4 border-blue-400 text-blue-900 p-4 mb-6 rounded">
+                <div className="bg-blue-50 border-l-4 border-blue-400 text-blue-900 p-4 mb-6 rounded ">
                   <p className="font-semibold mb-1">📄 Please Note:</p>
                   <p className="text-sm">
                     This is only a preview of the available spare parts.
@@ -980,59 +904,97 @@ export default function MoreAccessoriesDetails() {
                     parts is available on request. Please reach out for further
                     information.
                   </p>
+
+                  <button
+                    onClick={() => setShowFormModal(true)}
+                    className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded mt-5"
+                  >
+                    Product Enquiry
+                  </button>
                 </div>
 
                 {/* Form Fields */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t pt-6">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="px-4 py-2 rounded border border-gray-300"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="px-4 py-2 rounded border border-gray-300"
-                  />
-                  <input
-                    type="tel"
-                    name="mobile"
-                    placeholder="Mobile (with country code)"
-                    value={formData.mobile}
-                    onChange={handleChange}
-                    className="px-4 py-2 rounded border border-gray-300 sm:col-span-2"
-                  />
-                  <textarea
-                    name="message"
-                    rows={4}
-                    placeholder="Type your message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="px-4 py-2 rounded border border-gray-300 sm:col-span-2"
-                  />
-                </div>
-              </div>
+                {/* Slide-in Form */}
+                <AnimatePresence>
+                  {showFormModal && (
+                    <div className=" fixed top-0 left-0 h-screen w-screen bg-gray-800/40">
+                      <motion.div
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-lg z-[999] overflow-y-auto"
+                      >
+                        <div className="p-6">
+                          <h3 className="text-xl font-bold text-blue-800 mb-6 text-center">
+                            Product Enquiry Form
+                          </h3>
 
-              {/* Fixed Footer */}
-              <div className="px-2 py-4 border-t rounded-b-xl bg-white flex justify-between items-center">
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="bg-red-400 text-white px-6 py-2 rounded hover:bg-red-500"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleSubmit}
-                  className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800"
-                >
-                  Submit Enquiry
-                </button>
+                          <div className="space-y-4">
+                            <div>
+                              <label className="text-sm font-medium text-gray-700 block mb-1">
+                                Product Name
+                              </label>
+                              <input
+                                type="text"
+                                value={selectedPart.name}
+                                readOnly
+                                className="w-full px-4 py-2 rounded border bg-gray-100 cursor-not-allowed"
+                              />
+                            </div>
+
+                            <input
+                              name="name"
+                              placeholder="Your Name"
+                              value={formData.name}
+                              onChange={handleChange}
+                              className="w-full px-4 py-2 rounded border"
+                            />
+
+                            <input
+                              name="email"
+                              placeholder="Email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              className="w-full px-4 py-2 rounded border"
+                            />
+
+                            <input
+                              name="mobile"
+                              placeholder="Mobile (with country code)"
+                              value={formData.mobile}
+                              onChange={handleChange}
+                              className="w-full px-4 py-2 rounded border"
+                            />
+
+                            <textarea
+                              name="message"
+                              rows={4}
+                              placeholder="Your Message"
+                              value={formData.message}
+                              onChange={handleChange}
+                              className="w-full px-4 py-2 rounded border"
+                            />
+
+                            <div className="flex justify-between pt-4">
+                              <button
+                                onClick={() => setShowFormModal(false)}
+                                className="bg-red-400 text-white px-6 py-2 rounded hover:bg-red-500"
+                              >
+                                Cancel
+                              </button>
+                              <button
+                                onClick={handleSubmit}
+                                className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800"
+                              >
+                                Submit
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </motion.div>

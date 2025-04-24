@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Lato } from "next/font/google";
 import "./globals.css";
+// app/layout.tsx or pages/_app.tsx
+import "../lib/fontawesome";
 
 // Poppins as primary, Lato as fallback
 const poppins = Poppins({
