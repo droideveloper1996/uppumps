@@ -16,7 +16,7 @@ import {
 
 export default function VisionMissionValues() {
   return (
-    <section className="bg-white py-20 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className=" py-20 px-6 md:px-12 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function VisionMissionValues() {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-4xl font-bold text-slate-800 mb-4">
+        <h2 className="text-4xl font-bold text-[#2a6e9e] mb-4">
           Our Vision & Mission
         </h2>
         <p className="text-slate-600 max-w-2xl mx-auto">
@@ -33,7 +33,7 @@ export default function VisionMissionValues() {
 
         {/* Animated underline using Framer Motion */}
         <motion.div
-          className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"
+          className="w-24 h-1 bg-[#2a6e9e] mx-auto mt-4 rounded-full"
           animate={{ scaleX: [1, 1.5, 1] }}
           transition={{
             duration: 2,
@@ -52,16 +52,17 @@ export default function VisionMissionValues() {
           viewport={{ once: true }}
           className="bg-blue-50 rounded-2xl p-6 shadow-md"
         >
-          <FaBullseye size={28} className="text-blue-600 mb-4" />
-          <h3 className="text-2xl font-semibold text-slate-800 mb-2">
+          <FaBullseye size={28} className="text-[#2a6e9e] mb-4" />
+          <h3 className="text-2xl font-semibold text-[#2a6e9e] mb-2">
             Our Vision
           </h3>
-          <p className="text-slate-700">
+          <p className=" text-sm text-gray-600">
             To be a globally recognized name in sustainable water solutions and
             precision-engineered metal products—built on a foundation of family,
             integrity, and innovation.
           </p>
         </motion.div>
+        
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -70,16 +71,17 @@ export default function VisionMissionValues() {
           viewport={{ once: true }}
           className="bg-blue-50 rounded-2xl p-6 shadow-md"
         >
-          <FaHandsHelping size={28} className="text-blue-600 mb-4" />
-          <h3 className="text-2xl font-semibold text-slate-800 mb-2">
+          <FaHandsHelping size={28} className="text-[#2a6e9e] mb-4" />
+          <h3 className="text-2xl font-semibold text-[#2a6e9e] mb-2">
             Our Mission
           </h3>
-          <p className="text-slate-700">
+          <p className=" text-sm text-gray-600">
             To manufacture and deliver products that meet the highest quality
             standards, empower communities, and support infrastructure needs in
             both urban and rural landscapes—domestically and internationally.
           </p>
         </motion.div>
+      
       </div>
 
       <motion.div
@@ -89,9 +91,19 @@ export default function VisionMissionValues() {
         viewport={{ once: true }}
         className="mt-16"
       >
-        <h3 className="text-3xl font-bold text-center text-slate-800 mb-10">
+        <h3 className="text-3xl font-bold text-center text-[#2a6e9e] mb-6">
           Core Values
         </h3>
+        <motion.div
+          className="w-24 h-1 bg-[#2a6e9e] mx-auto mb-10 rounded-full"
+          animate={{ scaleX: [1, 1.5, 1] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{ originX: 0.5 }}
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
@@ -124,13 +136,13 @@ export default function VisionMissionValues() {
               viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition duration-300 group"
             >
-              <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+              <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4 group-hover:bg-[#2a6e9e] group-hover:text-white transition">
                 <FaCheckCircle
-                  className="text-blue-600 group-hover:text-white"
+                  className="text-[#2a6e9e] group-hover:text-white"
                   size={22}
                 />
               </div>
-              <h4 className="text-xl font-semibold text-slate-800 mb-2">
+              <h4 className="text-xl font-semibold text-[#2a6e9e] mb-2">
                 {item.label}
               </h4>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -146,13 +158,14 @@ export default function VisionMissionValues() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.4 }}
         viewport={{ once: true }}
-        className="mt-20 bg-blue-100 rounded-2xl p-8"
+        className="mt-20 bg-[#2a6e9e]/10 rounded-2xl p-8"
       >
         <div className="flex items-center gap-3 mb-4">
           <FaLeaf size={28} className="text-green-700" />
-          <h3 className="text-2xl font-bold text-slate-800">Sustainability</h3>
+          <h3 className="text-2xl font-bold text-[#2a6e9e]">Sustainability</h3>
+          
         </div>
-        <p className="text-slate-700 leading-relaxed">
+        <p className="text-slate-600 text-sm leading-relaxed">
           Water is life—and so is sustainability. We take pride in manufacturing
           solutions that support access to clean water in underserved areas. Our
           Hand Pumps are designed for long-term durability with minimal
@@ -169,9 +182,19 @@ export default function VisionMissionValues() {
         viewport={{ once: true }}
         className="mt-20"
       >
-        <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">
+        <h3 className="text-2xl font-bold text-[#2a6e9e] mb-6 text-center">
           Why Choose Us
         </h3>
+        <motion.div
+          className="w-24 h-1 bg-[#2a6e9e] mx-auto mt-2 mb-10 rounded-full"
+          animate={{ scaleX: [1, 1.5, 1] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{ originX: 0.5 }}
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
@@ -214,8 +237,8 @@ export default function VisionMissionValues() {
               viewport={{ once: true }}
               className="bg-white rounded-xl shadow-md p-5 border border-gray-100 hover:shadow-lg transition"
             >
-              <div className="text-blue-600 mb-3">{item.icon}</div>
-              <h4 className="text-lg font-semibold text-slate-800 mb-2">
+              <div className="text-[#2a6e9e] mb-3">{item.icon}</div>
+              <h4 className="text-lg font-semibold text-[#2a6e9e] mb-2">
                 {item.title}
               </h4>
               <p className="text-slate-600 text-sm leading-relaxed">

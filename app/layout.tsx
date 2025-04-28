@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Lato } from "next/font/google";
 import "./globals.css";
-// app/layout.tsx or pages/_app.tsx
 import "../lib/fontawesome";
 
 // Poppins as primary, Lato as fallback
@@ -31,11 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} ${lato.variable} font-sans antialiased bg-white`}
-      >
-        {children}
-      </body>
+      <body className={` font-sans antialiased `}>{children}</body>
     </html>
   );
 }

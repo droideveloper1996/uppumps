@@ -4,17 +4,15 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ContactTable from "@/IndianPages/ContactTable";
-import NewToolbar from "@/Pages/NewToolbar";
+import WebNavbar from "@/Pages/WebNavbar";
 import Footer from "@/Pages/Footer";
-import web_logo from "@/public/assets/logo/up_pump_logo Background Removed.png";
-import workers_img from "@/public/assets/IndianPagesImage/spare-parts-manufacturing-2-mp4.webp";
+import { Raleway, Poppins } from "next/font/google";
 import RailwayHero from "./RailwayHero";
-import RailwayOverview from "./RailwayOverview";
-import RailwayClients from "./RailwayClients";
-import RailwayInnovation from "./RailwayInnovation";
-import RailwayStructures from "./RailwayStructures";
-import RailwaySpecialTools from "./RailwaySpecialTools";
-import RailwayProductTable from "./RailwayProductTable";
+
+
+// Fonts
+const raleway = Raleway({ weight: ["600", "700", "800"], subsets: ["latin"] });
+const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
 export default function RailwayPage() {
   const [formData, setFormData] = useState({
@@ -39,16 +37,12 @@ export default function RailwayPage() {
 
   return (
     <>
-      <NewToolbar />
+      <WebNavbar />
 
-      <section className="w-full bg-white py-16 px-4 sm:px-8 md:px-12">
+      <section
+        className={`${poppins.className} w-full bg-white py-16 px-4 sm:px-8 md:px-12`}
+      >
         <RailwayHero />
-        <RailwayOverview />
-        <RailwayClients />
-        <RailwayInnovation />
-        <RailwayStructures />
-        <RailwaySpecialTools />
-        <RailwayProductTable />
 
         {/* Contact Section */}
         <motion.div
@@ -57,20 +51,31 @@ export default function RailwayPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-20 max-w-5xl mx-auto text-left"
         >
-          <h3 className="text-2xl font-bold text-blue-800 mb-6 text-center">
+          <h3
+            className={`text-2xl sm:text-3xl font-bold mb-6 text-center ${raleway.className}`}
+            style={{ color: "#2a6e9e" }}
+          >
             Contact Information
           </h3>
 
           <ContactTable />
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-10 border border-gray-200 rounded-xl">
-            <div className="sm:col-span-2  text-blue-800 mb-">
-              <p className="text-2xl font-bold">Connect With Us </p>
-              <p className="mt-5 text-sm text-gray-400">* Fields are mandatory </p>
+            <div className="sm:col-span-2 mb-6 text-center">
+              <p
+                className={`text-2xl font-bold ${raleway.className}`}
+                style={{ color: "#2a6e9e" }}
+              >
+                Connect With Us
+              </p>
+              <p className="mt-3 text-sm text-gray-500">
+                * Fields are mandatory
+              </p>
             </div>
+
             <div>
-              <label className="text-sm font-bold text-gray-700 block mb-1">
-                Your Name <sup className="text-base text-red-500">* </sup>
+              <label className="text-sm font-semibold text-gray-700 block mb-2">
+                Your Name <sup className="text-base text-red-500">*</sup>
               </label>
               <input
                 type="text"
@@ -78,13 +83,13 @@ export default function RailwayPage() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full px-4 py-2 rounded border border-gray-300"
+                className="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-[#2a6e9e]"
               />
             </div>
 
             <div>
-              <label className="text-sm font-bold text-gray-700 block mb-1">
-                Email Address <sup className="text-base text-red-500">* </sup>
+              <label className="text-sm font-semibold text-gray-700 block mb-2">
+                Email Address <sup className="text-base text-red-500">*</sup>
               </label>
               <input
                 type="email"
@@ -92,28 +97,28 @@ export default function RailwayPage() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded border border-gray-300"
+                className="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-[#2a6e9e]"
               />
             </div>
 
             <div className="sm:col-span-2">
-              <label className="text-sm font-bold text-gray-700 block mb-1">
+              <label className="text-sm font-semibold text-gray-700 block mb-2">
                 Mobile Number (with Country Code){" "}
-                <sup className="text-base text-red-500">* </sup>
+                <sup className="text-base text-red-500">*</sup>
               </label>
               <input
                 type="tel"
                 name="mobile"
                 value={formData.mobile}
                 onChange={handleChange}
-                placeholder="Enter your mobile no"
-                className="w-full px-4 py-2 rounded border border-gray-300"
+                placeholder="Enter your mobile number"
+                className="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-[#2a6e9e]"
               />
             </div>
 
             <div className="sm:col-span-2">
-              <label className="text-sm font-bold text-gray-700 block mb-1">
-                Message <sup className="text-base text-red-500">* </sup>
+              <label className="text-sm font-semibold text-gray-700 block mb-2">
+                Message <sup className="text-base text-red-500">*</sup>
               </label>
               <textarea
                 name="message"
@@ -121,14 +126,14 @@ export default function RailwayPage() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Type your message here..."
-                className="w-full px-4 py-2 rounded border border-gray-300"
+                className="w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-[#2a6e9e]"
               />
             </div>
 
-            <div className="sm:col-span-2 flex justify-center my-10">
+            <div className="sm:col-span-2 flex justify-center">
               <button
                 onClick={handleSubmit}
-                className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800 transition"
+                className="bg-[#2a6e9e] hover:bg-blue-800 text-white px-8 py-3 rounded-full font-semibold transition-all"
               >
                 Submit Enquiry
               </button>

@@ -1,11 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import NewToolbar from "@/Pages/NewToolbar";
-import Footer from "@/Pages/Footer";
-import { IoMdCloseCircle } from "react-icons/io";
+import { useRouter } from "next/navigation";
+import { Raleway, Poppins } from "next/font/google";
+
+// Fonts
+const raleway = Raleway({
+  weight: ["600", "700", "800", "900"],
+  subsets: ["latin"],
+});
+const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ["latin"] });
 
 const handpumpData = [
   {
@@ -41,20 +47,20 @@ const handpumpData = [
     ],
   },
   {
-    title: "India Mark II & III with Force Lift Attachments",
-    image:
-      "/assets/indianPagesImage/handpumps/india_mark_2_and_3_with_force_lift_attachments.jpg",
+    title: "Extra Deepwell Hand Pump",
+    image: "/assets/placeholder_image.avif",
     overview:
-      "Specialized version of India Mark II/III pumps with Force Lift Attachments for delivering water uphill or into overhead tanks.",
+      "At U. P. Pumps Pvt. Ltd., our Extra Deepwell Hand Pumps are specially engineered for extreme depths up to 120 meters, ensuring reliable access to groundwater in the most challenging conditions. Built for durability, easy maintenance, and heavy-duty usage, they serve rural communities, disaster relief, and agricultural sectors effectively.",
     features: [
-      "Adds vertical lifting capability (force lift)",
-      "Used to transport water from borewell to elevated storage",
-      "Compatible with Mark II and III bodies",
-      "Preserves manual operation efficiency",
+      "Designed for extreme depths — up to 120 meters and beyond",
+      "ISI-marked and compliant with IS:15500 standards",
+      "Corrosion-resistant materials for long life",
+      "Smooth operation with minimal effort",
+      "Low maintenance and easy parts replacement",
     ],
     applications: [
-      "Hilly terrain and multi-storey installations",
-      "Water storage for irrigation and school/community use",
+      "Rural drinking water supply",
+      "Remote and tribal area water access",
     ],
   },
   {
@@ -86,53 +92,118 @@ const handpumpData = [
     ],
     applications: ["Domestic water use", "School campuses and institutions"],
   },
+  {
+    title: "Shallow Well Hand Pump",
+    image: "/assets/placeholder_Image.avif",
+    overview:
+      "Our Shallow Well Hand Pumps are designed for water tables close to the surface. They offer reliable water access with minimal effort, making them ideal for schools, homes, and rural areas with high water tables.",
+    features: [
+      "Suitable for depths up to 15 meters",
+      "Lightweight construction for easy handling",
+      "Low maintenance with simple parts replacement",
+      "Available in cast iron and reinforced plastic options",
+      "Designed for minimal operational effort",
+    ],
+    applications: [
+      "Domestic water use in villages and towns",
+      "School and institutional installations",
+      "Community parks and playgrounds",
+      "Emergency water access in flood-prone areas",
+    ],
+  },
+  {
+    title: "PVC Riser Pipe",
+    image: "/assets/placeholder_Image.avif",
+    overview:
+      "Our high-grade PVC Riser Pipes are engineered to provide a lightweight, corrosion-resistant alternative to traditional galvanized pipes, ensuring smooth water flow and long service life.",
+    features: [
+      "Lightweight yet strong for easy installation",
+      "Non-corrosive material ensures long life",
+      "ISI-marked and compliant with hand pump standards",
+      "Available in multiple diameters and lengths",
+      "Cost-effective and ideal for deepwell installations",
+    ],
+    applications: [
+      "Hand pump installations in all terrains",
+      "Deep and shallow borewells",
+      "Government water projects",
+      "Rural water supply schemes",
+    ],
+  },
+  {
+    title: "Hand Pump Spare Parts",
+    image: "/assets/placeholder_Image.avif",
+    overview:
+      "We offer a comprehensive range of high-quality spare parts for hand pumps, ensuring smooth operation, easy repairs, and long service life of pumps even in the most challenging conditions.",
+    features: [
+      "ISI-certified rods, plungers, seals, and cylinders",
+      "High-quality rubber seals for optimal water retention",
+      "Bright bar connecting rods and stainless steel rods available",
+      "Compatibility with India Mark II, Mark III, Afridev, and other models",
+      "Precision machining for perfect fit and durability",
+    ],
+    applications: [
+      "Maintenance of installed hand pumps",
+      "Upgradation of existing hand pump systems",
+      "Spare kits for emergency response teams",
+      "Supply for government and NGO maintenance programs",
+    ],
+  },
+  {
+    title: "Hand Pump Tool Kit",
+    image: "/assets/placeholder_Image.avif",
+    overview:
+      "Our Hand Pump Tool Kits are specially curated for easy installation, servicing, and maintenance of various hand pump models. Rugged, portable, and designed for field conditions.",
+    features: [
+      "Complete kit with wrenches, clamps, lifting devices",
+      "Compatible with India Mark II, III, and Afridev models",
+      "Made with high-strength materials for durability",
+      "Includes instructional guide for local technicians",
+      "Portable design with heavy-duty carrying case",
+    ],
+    applications: [
+      "Village Level Operation and Maintenance (VLOM) programs",
+      "NGO and Government water supply maintenance teams",
+      "Emergency response repair kits",
+      "Training and skill development programs for rural technicians",
+    ],
+  },
 ];
 
 export default function Handpumps() {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedPump, setSelectedPump] = useState<any>(null);
-  const [showFormModal, setShowFormModal] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    mobile: "",
-    message: "",
-  });
-
-  const handleKnowMore = (pump: any) => {
-    setSelectedPump(pump);
-    setShowModal(true);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = () => {
-    console.log("Submitted Enquiry:", {
-      product: selectedPump.title,
-      ...formData,
-    });
-    alert("Thank you for your enquiry!");
-    setShowModal(false);
-    setShowFormModal(false);
-    setFormData({ name: "", email: "", mobile: "", message: "" });
-  };
-
-  useEffect(() => {
-    document.body.style.overflow = showModal ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [showModal]);
+  const router = useRouter();
 
   return (
-    <section>
-      <NewToolbar />
+    <section className={poppins.className}>
+      {/* Heading */}
+      <div className="max-w-7xl mx-auto px-4 py-10 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className={`text-3xl sm:text-4xl font-bold mb-6 ${raleway.className}`}
+          style={{ color: "#2a6e9e" }}
+        >
+          Deepwell Hand Pumps
+        </motion.h1>
 
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-gray-500 text-base leading-relaxed max-w-3xl mx-auto"
+        >
+          We specialize in the manufacturing of a wide range of ISI-marked deep
+          well Hand Pumps designed to perform in demanding field conditions.
+          These pumps are built with precision and are field-tested for
+          long-term durability and ease of maintenance. Our ISI-marked Hand
+          Pumps are designed to withstand heavy usage in rural and remote
+          conditions. Below is a comprehensive list of standard and extra
+          deepwell Hand Pumps we manufacture.
+        </motion.p>
+      </div>
+
+      {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {handpumpData.map((pump, i) => (
           <motion.div
@@ -141,178 +212,75 @@ export default function Handpumps() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
             viewport={{ once: true }}
-            className="bg-white border border-slate-200 rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+            className="bg-white border border-slate-200 rounded-xl shadow hover:shadow-lg transition overflow-hidden p-6 flex flex-col"
           >
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-56 mb-4">
               <Image
                 src={pump.image}
                 alt={pump.title}
                 fill
-                className="object-contain py-5"
+                className="object-contain"
               />
             </div>
-            <div className="p-6 space-y-3">
-              <h3 className="text-xl font-bold text-blue-800">{pump.title}</h3>
-              <p className="text-slate-700 text-sm">{pump.overview}</p>
-              <button
-                onClick={() => handleKnowMore(pump)}
-                className="bg-blue-700 hover:bg-blue-600 text-white px-4 py-1.5 rounded-md"
+
+            <h3
+              className={`text-xl font-bold mb-2 ${raleway.className}`}
+              style={{ color: "#2a6e9e" }}
+            >
+              {pump.title}
+            </h3>
+
+            <p className="text-gray-500 text-sm mb-4">{pump.overview}</p>
+
+            <div className="mb-4">
+              <h4
+                className={`font-semibold text-base mb-2 ${raleway.className}`}
+                style={{ color: "#2a6e9e" }}
               >
-                Know More
-              </button>
+                Features:
+              </h4>
+              <ul className="list-disc pl-5 text-sm text-gray-500 space-y-1">
+                {pump.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4
+                className={`font-semibold text-base mb-2 ${raleway.className}`}
+                style={{ color: "#2a6e9e" }}
+              >
+                Applications:
+              </h4>
+              <ul className="list-disc pl-5 text-sm text-gray-500 space-y-1">
+                {pump.applications.map((application, index) => (
+                  <li key={index}>{application}</li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Product Info Modal */}
-      <AnimatePresence>
-        {showModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-          >
-            <div className="bg-white max-w-4xl w-full mx-4 my-12 h-[90vh] rounded-xl shadow-lg relative flex flex-col ">
-              <IoMdCloseCircle
-                onClick={() => setShowModal(false)}
-                className="text-4xl absolute top-3 right-3 hover:rotate-180 duration-200 hover:scale-110 text-gray-600 hover:text-gray-500"
-              />
-              <div className="overflow-y-auto p-8 flex-1">
-                <h3 className="text-2xl font-bold text-blue-700 mb-4">
-                  {selectedPump.title} Details
-                </h3>
-                <div className="relative w-full h-64 mb-6 ">
-                  <Image
-                    src={selectedPump.image}
-                    alt={selectedPump.title}
-                    fill
-                    className="object-contain rounded py-10"
-                  />
-                </div>
-                <p className="mb-4 text-gray-700">{selectedPump.overview}</p>
+      {/* Bottom Contact Section */}
+      <div className="bg-blue-50 border-l-4 border-blue-500 max-w-5xl mx-auto p-8 rounded-xl text-center mt-10 space-y-6">
+        <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+          📢 <strong>Need more information?</strong> <br />
+          For detailed specifications, spare parts, and complete catalogues,
+          please contact us via phone at
+          <br />
+          <strong>+91 9415127047 / +91 9455598050</strong> or email us at{" "}
+          <strong>uppumpsknp1@gmail.com</strong>.
+        </p>
 
-                <h4 className="font-semibold text-blue-700 mb-2">Features:</h4>
-                <ul className="list-disc pl-5 text-sm text-gray-700 mb-4">
-                  {selectedPump.features?.map((f: string, i: number) => (
-                    <li key={i}>{f}</li>
-                  ))}
-                </ul>
-
-                <h4 className="font-semibold text-blue-700 mb-2">
-                  Applications:
-                </h4>
-                <ul className="list-disc pl-5 text-sm text-gray-700">
-                  {selectedPump.applications?.map((a: string, i: number) => (
-                    <li key={i}>{a}</li>
-                  ))}
-                </ul>
-
-                <div className="mt-6 p-4 border-l-4 border-blue-500 bg-blue-50 rounded relative">
-                  <strong>Note:</strong> Full catalogue not available online.
-                  <br />
-                  📧 <strong>uppumpsknp1@gmail.com</strong>
-                  <br />
-                  📞 <strong>+91 9415127047 / +91 9455598050</strong>
-                  <br />
-                  🏢 1-B, Dadanagar, Kanpur, UP, 208022
-                  <button
-                    onClick={() => setShowFormModal(true)}
-                    className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded absolute right-3 bottom-3"
-                  >
-                    Product Enquiry
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Slide-in Form */}
-            <AnimatePresence>
-              {showFormModal && (
-                <div className=" fixed top-0 left-0 h-screen w-screen bg-gray-800/40">
-                  <motion.div
-                    initial={{ x: "100%" }}
-                    animate={{ x: 0 }}
-                    exit={{ x: "100%" }}
-                    className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-lg z-[999] overflow-y-auto"
-                  >
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-blue-800 mb-6 text-center">
-                        Product Enquiry Form
-                      </h3>
-
-                      <div className="space-y-4">
-                        <div>
-                          <label className="text-sm font-medium text-gray-700 block mb-1">
-                            Product Name
-                          </label>
-                          <input
-                            type="text"
-                            value={selectedPump.title}
-                            readOnly
-                            className="w-full px-4 py-2 rounded border bg-gray-100 cursor-not-allowed"
-                          />
-                        </div>
-
-                        <input
-                          name="name"
-                          placeholder="Your Name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="w-full px-4 py-2 rounded border"
-                        />
-
-                        <input
-                          name="email"
-                          placeholder="Email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="w-full px-4 py-2 rounded border"
-                        />
-
-                        <input
-                          name="mobile"
-                          placeholder="Mobile (with country code)"
-                          value={formData.mobile}
-                          onChange={handleChange}
-                          className="w-full px-4 py-2 rounded border"
-                        />
-
-                        <textarea
-                          name="message"
-                          rows={4}
-                          placeholder="Your Message"
-                          value={formData.message}
-                          onChange={handleChange}
-                          className="w-full px-4 py-2 rounded border"
-                        />
-
-                        <div className="flex justify-between pt-4">
-                          <button
-                            onClick={() => setShowFormModal(false)}
-                            className="bg-red-400 text-white px-6 py-2 rounded hover:bg-red-500"
-                          >
-                            Cancel
-                          </button>
-                          <button
-                            onClick={handleSubmit}
-                            className="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800"
-                          >
-                            Submit
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <Footer />
+        <button
+          onClick={() => router.push("/contact")}
+          className="bg-[#2a6e9e] hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition"
+        >
+          Contact Us
+        </button>
+      </div>
     </section>
   );
 }

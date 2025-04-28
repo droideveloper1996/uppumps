@@ -6,20 +6,30 @@ import ContactTable from "./ContactTable";
 import Image from "next/image";
 import web_logo from "../public/assets/logo/U-2.png";
 import workers_img from "../public/assets/IndianPagesImage/spare-parts-manufacturing-2-mp4.webp";
+import { Poppins, Roboto } from "next/font/google";
+
+const roboto = Roboto({ weight: ["400", "700", "900"], subsets: ["latin"] });
+const poppins = Poppins({ weight: ["400", "600", "700"], subsets: ["latin"] });
 
 export default function HeroSection() {
   return (
-    <section className="w-full bg-white py-16 px-4 sm:px-8 md:px-12">
+    <section className="w-full  py-16 px-4 sm:px-8 md:px-12">
       <div className="max-w-7xl mx-auto text-center">
         {/* Hero Section */}
         <div className="flex justify-center mb-4">
-          <Image src={web_logo} alt="logo" height={100} width={100} />
+          <Image
+            src={web_logo}
+            alt="logo"
+            height={100}
+            width={100}
+            className="rounded-sm"
+          />
         </div>
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-900 mb-4"
+          className={`${roboto.className} text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-900 mb-4`}
         >
           U. P. Pumps Private Limited
         </motion.h1>
@@ -30,7 +40,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg sm:text-xl md:text-2xl text-slate-700 italic mb-4"
         >
-          Reliable Hand Pump Solutions Since 1991
+          Built to Last. Made to Adapt
         </motion.h2>
 
         <motion.p

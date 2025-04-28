@@ -2,21 +2,21 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FaCog,
-  FaPlay,
-  FaCheckCircle,
-  FaCertificate,
-  FaShieldAlt,
-} from "react-icons/fa";
+import { FaCog, FaPlay } from "react-icons/fa";
 import Image from "next/image";
-import CustomBtn from "./CustomBtn";
+import { Raleway, Poppins } from "next/font/google";
+
+// Fonts
+const raleway = Raleway({ weight: ["700", "800", "900"], subsets: ["latin"] });
+const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ["latin"] });
 
 export default function HeroSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <section className="bg-[#f5f9ff] pt-28 pb-20 overflow-hidden">
+    <section
+      className={`bg-[#EBEBEB] py-10 overflow-hidden ${poppins.className}`}
+    >
       {/* Top Hero Block */}
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-10 px-6">
         {/* Left Content */}
@@ -31,13 +31,15 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center bg-blue-100 text-blue-600 px-4 py-2 rounded-full font-medium text-sm mb-4"
+            className="inline-flex items-center bg-blue-100 text-[#2a6e9e] px-4 py-2 rounded-full font-medium text-sm mb-4"
           >
             <FaCog className="mr-2" />
-            Reliable Hand Pump Solutions Since 1991
+            Built to Last. Made to Adapt
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-800 leading-tight">
+          <h1
+            className={`text-4xl sm:text-5xl font-bold text-[#2a6e9e] leading-tight ${raleway.className}`}
+          >
             U. P. Pumps Private Limited
           </h1>
 
@@ -46,46 +48,15 @@ export default function HeroSection() {
             India and growing globally.
             <br />
             <br />
-            <strong className="text-blue-700">
+            <strong className="text-[#2a6e9e]">
               GeM Authorised Manufacturer:
-            </strong>{" "}
+            </strong>
             <br />
-            Up Pump is proudly registered and verified as an authorized
+            U.P. Pumps is proudly registered and verified as an authorized
             manufacturer on the Government e-Marketplace (GeM), enabling
             seamless procurement by government bodies and public sector
             organizations across India.
-            <br />
-            <br />
-            <strong>Certifications:</strong>
-            <ul className="  mt-2 text-sm">
-              <li>
-                <FaCheckCircle className="inline mr-2 text-blue-600" />
-                BIS Certified (Bureau of Indian Standards)
-              </li>
-              <li>
-                <FaCertificate className="inline mr-2 text-blue-600" />
-                ISO 15500 Compliant
-              </li>
-            </ul>
           </p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-8 flex items-center gap-6"
-          >
-            <CustomBtn text="Get Started" href="/get-started" />
-            <button
-              onClick={() => setIsVideoOpen(true)}
-              className="flex items-center gap-2 text-slate-700 hover:text-blue-700 font-semibold transition"
-            >
-              <div className="p-2 rounded-full border border-blue-600 text-blue-600">
-                <FaPlay size={14} />
-              </div>
-              Play Video
-            </button>
-          </motion.div>
         </motion.div>
 
         {/* Right Image */}
@@ -96,7 +67,7 @@ export default function HeroSection() {
           className="relative"
         >
           <div className="relative w-fit overflow-hidden rounded-xl">
-            <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-br from-white/60 via-transparent to-white/60 blur-6xl" />
+            <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-br from-white/60 via-transparent to-white/60 blur-3xl" />
             <Image
               src="/assets/HeroSection/georg-eiermann-BW4Fp1_sorw-unsplash copy.jpg"
               alt="Hero Illustration"

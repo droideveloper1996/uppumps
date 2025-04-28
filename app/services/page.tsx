@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Toolbar from "@/Pages/ToolBar";
 import Footer from "@/Pages/Footer";
 import NewToolbar from "@/Pages/NewToolbar";
+import WebNavbar from "@/Pages/WebNavbar";
 
 const pumpModels = [
   {
@@ -31,7 +32,7 @@ const pumpModels = [
 export default function PumpModels() {
   return (
     <section>
-      <NewToolbar />
+      <WebNavbar />
 
       {/* Hero Section */}
       <div className="text-center max-w-3xl mx-auto px-6 mt-12">

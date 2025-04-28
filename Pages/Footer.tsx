@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   FaXTwitter,
   FaFacebookF,
@@ -14,7 +15,7 @@ export default function Footer() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-white pt-16 mt-10 border-t"
+      className=" pt-16 mt-10 border-t"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -28,7 +29,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl font-bold text-slate-800 mb-4">
+          <h2 className="text-2xl font-bold text-[#2a6e9e] mb-4">
             U. P. Pumps Pvt. Ltd.
           </h2>
           <p className="leading-relaxed text-sm">
@@ -47,7 +48,7 @@ export default function Footer() {
               uppumpsknp1@gmail.com
             </a>
           </p>
-          <div className="flex gap-3 mt-4">
+          {/* <div className="flex gap-3 mt-4">
             {[FaXTwitter, FaFacebookF, FaInstagram, FaLinkedinIn].map(
               (Icon, i) => (
                 <a
@@ -59,7 +60,13 @@ export default function Footer() {
                 </a>
               )
             )}
-          </div>
+          </div> */}
+          {/* Button */}
+          <Link href="/contact">
+            <button className="bg-[#2a6e9e] hover:bg-[#547a94] text-white px-6 py-2 rounded-md transition-all text-sm sm:text-base shadow mt-5">
+              Contact Us
+            </button>
+          </Link>
         </motion.div>
 
         {/* Railway Offerings */}
@@ -68,7 +75,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="font-semibold text-slate-800 mb-4">
+          <h3 className="font-semibold text-[#2a6e9e] mb-4">
             Railway Solutions
           </h3>
           <ul className="space-y-2">
@@ -87,7 +94,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="font-semibold text-slate-800 mb-4">
+          <h3 className="font-semibold text-[#2a6e9e] mb-4">
             Government Clients
           </h3>
           <ul className="space-y-2">
@@ -105,7 +112,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="font-semibold text-slate-800 mb-4">
+          <h3 className="font-semibold text-[#2a6e9e] mb-4">
             Cycle & GI Pipe Manufacturing
           </h3>
           <ul className="space-y-2">
@@ -126,7 +133,7 @@ export default function Footer() {
         className="border-t mt-12 pt-6 pb-8 text-center text-sm text-gray-500"
       >
         © {new Date().getFullYear()}{" "}
-        <strong className="text-slate-800">U. P. Pumps Pvt. Ltd.</strong>. All
+        <strong className="text-[#2a6e9e]">U. P. Pumps Pvt. Ltd.</strong>. All
         Rights Reserved
         <br />
         Designed by{" "}
