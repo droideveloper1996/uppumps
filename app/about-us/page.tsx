@@ -26,7 +26,7 @@ export default function AboutUs() {
   const router = useRouter(); // ✅ Initialize router
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const interval = setInterval(() => { 
       setCurrentIndex((prev) => (prev + 1) % aboutImages.length);
     }, 3000); // every 3 sec
     return () => clearInterval(interval);
