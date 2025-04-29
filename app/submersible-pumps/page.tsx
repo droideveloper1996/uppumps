@@ -11,8 +11,8 @@ const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
 // Data
 const offers = [
-  "1HP Submersible Pumps",
-  "5HP Submersible Pumps",
+  "1HP (horsepower) Submersible Pumps",
+  "5HP (horsepower) Submersible Pumps",
   "Custom Submersible Solutions",
 ];
 
@@ -43,7 +43,7 @@ export default function SubmersiblePumpsSection() {
         className={`text-4xl sm:text-5xl font-bold text-center ${raleway.className}`}
         style={{ color: "#2a6e9e" }}
       >
-        Submersible Pumps
+        Submersible Pumps / MS Mildsteel
       </motion.h1>
 
       {/* Description */}

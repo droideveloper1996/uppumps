@@ -24,6 +24,7 @@ const menuItems = [
   { label: "About Us", href: "/about-us" },
   { label: "Quality Management", href: "/quality-management" },
   { label: "Blogs", href: "/blogs" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -51,9 +52,14 @@ export default function WebNavbar() {
               alt="logo"
               className="w-[3rem] h-[3rem] rounded-sm object-contain"
             />
-            <span className="text-xl sm:text-2xl font-bold text-[#2a6e9e]">
-              U. P. Pumps Pvt. Ltd.
-            </span>
+            <div className="flex flex-col items-center justify-center ">
+              <span className="text-xl sm:text-2xl font-extrabold text-[#2a6e9e]">
+                U. P. Pumps Pvt. Ltd.
+              </span>
+              <span className="text-sm font-semibold text-[#2a6e9e] -translate-y-1">
+                Built to Last. Made to Adapt
+              </span>
+            </div>
           </div>
 
           {/* Hamburger Menu (Mobile) */}
@@ -67,7 +73,7 @@ export default function WebNavbar() {
         {/* Desktop Navigation */}
         <div className="hidden sm:block border-t border-gray-300">
           <div
-            className={`flex gap-6 justify-center py-3 max-w-7xl mx-auto text-sm sm:text-base font-medium ${poppins.className}`}
+            className={`flex gap-6 justify-center py-3 max-w-7xl mx-auto text-sm sm:text-sm font-medium ${poppins.className}`}
           >
             {menuItems.map(({ label, href }, i) => (
               <span

@@ -4,7 +4,13 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { IoIosCloseCircle } from "react-icons/io";
+import { Raleway, Poppins } from "next/font/google";
 
+// Fonts
+const raleway = Raleway({ weight: ["700", "800"], subsets: ["latin"] });
+const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
+
+// Images array
 const achievements = [
   { image: "/assets/Achievement/WhatsApp Image 2025-04-24 at 18.05.06.jpeg" },
   { image: "/assets/Achievement/WhatsApp Image 2025-04-24 at 18.05.25.jpeg" },
@@ -42,41 +48,35 @@ export default function AchievementsPage() {
   };
 
   useEffect(() => {
-    if (selectedImage) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = selectedImage ? "hidden" : "auto";
+
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [selectedImage]);
 
   return (
-    <section>
+    <section className={poppins.className}>
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-3xl sm:text-4xl font-bold  text-center"
+          className={`text-3xl sm:text-4xl font-bold text-center ${raleway.className}`}
           style={{ color: "#2a6e9e" }}
         >
           OUR ACHIEVEMENTS & REWARDS
         </motion.h1>
+
         <motion.div
           className="w-24 h-1 bg-[#2a6e9e] mx-auto my-5 rounded-full"
           animate={{ scaleX: [1, 2.5, 1] }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           style={{ originX: 0.5 }}
         />
 
-        {/* Main Content */}
+        {/* Description */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -91,7 +91,10 @@ export default function AchievementsPage() {
             across India and beyond.
           </p>
 
-          <h2 className="text-2xl font-bold" style={{ color: "#2a6e9e" }}>
+          <h2
+            className={`text-2xl font-bold ${raleway.className}`}
+            style={{ color: "#2a6e9e" }}
+          >
             Over 20,00,000 Hand Pumps Supplied
           </h2>
           <p>
@@ -100,59 +103,50 @@ export default function AchievementsPage() {
             access in rural and urban regions alike.
           </p>
 
-          <h2 className="text-2xl font-bold" style={{ color: "#2a6e9e" }}>
+          <h2
+            className={`text-2xl font-bold ${raleway.className}`}
+            style={{ color: "#2a6e9e" }}
+          >
             🏅 Achievements & Recognition
           </h2>
           <p>
             Over the decades, U P Pumps Pvt. Ltd. has been recognized for its
             outstanding contribution to industry, innovation, and community
-            upliftment. These awards and accolades reflect our unwavering
-            commitment to quality, sustainability, and excellence in
-            manufacturing.
+            upliftment.
           </p>
 
-          {/* Awards */}
-          <h3 className="text-xl font-semibold text-blue-800">
+          {/* Awards Section */}
+          <h3 className="text-xl font-semibold text-[#2a6e9e]">
             National & Government Recognitions
           </h3>
           <ul className="list-disc pl-6 space-y-1">
             <li>
               Rajya Sabha Udyog Puruskar – Honoring industrial excellence.
             </li>
-            <li>
-              Bhartiya Nirman Gaurav Awards – Celebrating contributions to
-              India's development.
-            </li>
-            <li>
-              National Awards to Small Scale Entrepreneurs – Ministry of Small
-              Scale Industries.
-            </li>
+            <li>Bhartiya Nirman Gaurav Awards – Celebrating India's growth.</li>
+            <li>National Awards to Small Scale Entrepreneurs.</li>
           </ul>
 
-          <h3 className="text-xl font-semibold text-blue-800">
+          <h3 className="text-xl font-semibold text-[#2a6e9e]">
             State & Sectoral Awards
           </h3>
           <ul className="list-disc pl-6 space-y-1">
-            <li>
-              Prashasti Patra Pratham Puruskar by Udyog Vibhaag - Uttar Pradesh.
-            </li>
-            <li>
-              Excellence Certificate by The Institute of Economic Studies.
-            </li>
+            <li>Prashasti Patra Pratham Puruskar by Udyog Vibhaag, U.P.</li>
+            <li>Excellence Certificate by Institute of Economic Studies.</li>
           </ul>
 
-          <h3 className="text-xl font-semibold text-blue-800">
-            Certifications & Industry Accreditations
+          <h3 className="text-xl font-semibold text-[#2a6e9e]">
+            Certifications & Accreditations
           </h3>
           <ul className="list-disc pl-6 space-y-1">
-            <li>ZED Bronze Certificate – MSME Sustainable (ZED) Scheme.</li>
-            <li>ISO 9001:2008 Certification – Quality Management Standards.</li>
-            <li>ISI Mark Certification – Across multiple hand pump models.</li>
-            <li>BIS Licensed Manufacturer for all our products.</li>
+            <li>ZED Bronze Certificate (MSME Sustainable Scheme).</li>
+            <li>ISO 9001:2008 Certified Quality Management.</li>
+            <li>ISI Mark Certification on hand pumps.</li>
+            <li>BIS Licensed Manufacturer for pumps and parts.</li>
           </ul>
         </motion.div>
 
-        {/* Gallery */}
+        {/* Gallery Section */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-12">
           {achievements.map((item, index) => (
             <motion.div
@@ -177,11 +171,10 @@ export default function AchievementsPage() {
         </div>
       </div>
 
-      {/* Popup Full Image */}
+      {/* Fullscreen Popup */}
       <AnimatePresence>
         {selectedImage && (
           <>
-            {/* Background */}
             <motion.div
               className="fixed inset-0 bg-black/40 z-50"
               initial={{ opacity: 0 }}
@@ -189,7 +182,7 @@ export default function AchievementsPage() {
               exit={{ opacity: 0 }}
               onClick={closeModal}
             />
-            {/* Image Popup */}
+
             <motion.div
               className="fixed inset-0 flex items-center justify-center z-50 p-4"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -209,7 +202,7 @@ export default function AchievementsPage() {
                   alt="Full Achievement"
                   width={1200}
                   height={800}
-                  className="object-fit h-[90vh] w-[60%] rounded"
+                  className="object-fit rounded max-h-[90vh] w-auto"
                 />
               </div>
             </motion.div>

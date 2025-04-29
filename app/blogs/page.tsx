@@ -106,15 +106,28 @@ export default function BlogCardSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-20">
       {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className={`text-4xl sm:text-5xl font-bold text-center mb-12 ${raleway.className}`}
-        style={{ color: "#2a6e9e" }}
-      >
-        Our Blogs
-      </motion.h1>
+      <div className="text-center mb-16">
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className={`text-4xl sm:text-5xl font-bold ${raleway.className}`}
+          style={{ color: "#2a6e9e" }}
+        >
+          Our Blogs
+        </motion.h1>
+
+        <motion.div
+          className="w-24 h-1 bg-[#2a6e9e] mx-auto mt-7 rounded-full"
+          animate={{ scaleX: [1, 1.5, 1] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{ originX: 0.5 }}
+        />
+      </div>
 
       {/* Cards Flex */}
       <div className="flex flex-wrap justify-center gap-8">

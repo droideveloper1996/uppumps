@@ -23,7 +23,7 @@ export default function GiPipesSection() {
         className={`text-4xl sm:text-5xl font-bold text-center mb-4 ${raleway.className}`}
         style={{ color: "#2a6e9e" }}
       >
-        GI Pipes
+        GI Pipes / MS Mildsteel
       </motion.h1>
 
       {/* New Description Below Heading */}
