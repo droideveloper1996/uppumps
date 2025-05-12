@@ -10,17 +10,18 @@ export default function ContactTable() {
         {/* Email & Phone */}
         <div className="mb-8">
           <p className="text-slate-800 text-base sm:text-lg font-semibold flex items-center gap-2">
-            <FaEnvelope className="text-blue-600" />
+            <FaEnvelope style={{ color: "#2a6e9e" }} />
             Email:
             <a
               href="mailto:uppumpsknp1@gmail.com"
-              className="text-blue-600 underline font-medium"
+              className="underline font-medium"
+              style={{ color: "#2a6e9e" }}
             >
               uppumpsknp1@gmail.com
             </a>
           </p>
           <p className="text-slate-800 text-base sm:text-lg font-semibold flex items-center gap-2 mt-2">
-            <FaPhone className="text-blue-600" />
+            <FaPhone style={{ color: "#2a6e9e" }} />
             Phone:{" "}
             <span className="font-normal text-slate-700">
               +91 9415127047 | +91 9455598050
@@ -31,7 +32,7 @@ export default function ContactTable() {
         {/* Office Addresses */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm sm:text-base text-slate-800">
           <div>
-            <h4 className="font-bold text-blue-700 mb-1">
+            <h4 className="font-bold mb-1" style={{ color: "#2a6e9e" }}>
               Delhi Office (Registered Office):
             </h4>
             <p>
@@ -40,18 +41,24 @@ export default function ContactTable() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-blue-700 mb-1">Kanpur Office:</h4>
+            <h4 className="font-bold mb-1" style={{ color: "#2a6e9e" }}>
+              Kanpur Office:
+            </h4>
             <p>1-B, Dadanagar, Kanpur, 208022</p>
           </div>
           <div>
-            <h4 className="font-bold text-blue-700 mb-1">Bilaspur Office:</h4>
+            <h4 className="font-bold mb-1" style={{ color: "#2a6e9e" }}>
+              Bilaspur Office:
+            </h4>
             <p>
               Village Basiya, Silphari Road, Ph. No. 42, Kh. No. 369/2, Block
               Bilha, Dist. Bilaspur, Bilaspur, Chhattisgarh, 495004
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-blue-700 mb-1">Gwalior Office:</h4>
+            <h4 className="font-bold mb-1" style={{ color: "#2a6e9e" }}>
+              Gwalior Office:
+            </h4>
             <p>
               26B, Plot Industrial Area, Maharajpura, Morar, Gwalior, Madhya
               Pradesh, 474020

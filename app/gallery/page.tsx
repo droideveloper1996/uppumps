@@ -11,16 +11,16 @@ const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
 // Images Array
 const galleryImages = [
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.53.46 (1).jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.53.46 (2).jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.53.46 (3).jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.53.46 (4).jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.53.46 (5).jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.53.46.jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.54.28 (1).jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.54.28 (2).jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.54.28.jpeg",
-  "/assets/gallery/WhatsApp Image 2025-04-29 at 15.54.28 (3).jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.53.46 (1).jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.53.46 (2).jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.53.46 (3).jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.53.46 (4).jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.53.46 (5).jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.53.46.jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.54.28 (1).jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.54.28 (2).jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.54.28.jpeg",
+  "/assets/Gallery/WhatsApp Image 2025-04-29 at 15.54.28 (3).jpeg",
 ];
 
 export default function GallerySection() {

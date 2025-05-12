@@ -264,7 +264,7 @@ export default function Handpumps() {
       </div>
 
       {/* Bottom Contact Section */}
-      <div className="bg-blue-50 border-l-4 border-blue-500 max-w-5xl mx-auto p-8 rounded-xl text-center mt-10 space-y-6">
+      <div className="bg-[#2a6e9e]/10 border-l-4 border-[#2a6e9e] max-w-5xl mx-auto p-8 rounded-xl text-center mt-10 space-y-6">
         <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
           📢 <strong>Need more information?</strong> <br />
           For detailed specifications, spare parts, and complete catalogues,
@@ -276,7 +276,7 @@ export default function Handpumps() {
 
         <button
           onClick={() => router.push("/contact")}
-          className="bg-[#2a6e9e] hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition"
+          className="bg-[#2a6e9e] hover:bg-[#476e8a] text-white font-semibold px-8 py-3 rounded-full transition"
         >
           Contact Us
         </button>

@@ -7,17 +7,14 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import Toolbar from "@/Pages/ToolBar";
-import Footer from "@/Pages/Footer";
-import NewToolbar from "@/Pages/NewToolbar";
-import WebNavbar from "@/Pages/WebNavbar";
 import { Raleway, Poppins } from "next/font/google";
+import { useState } from "react";
+import axios from "axios";
 
 // Fonts
 const raleway = Raleway({ weight: ["700", "800"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
-// Contact Data
 const contactItems = [
   {
     icon: <FaPhoneAlt size={40} />,
@@ -57,10 +54,47 @@ const contactItems = [
 ];
 
 export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(
+        "https://script.google.com/macros/s/AKfycbz6zQDfigIF6aTPM_TpO9Yj4H72RN0Q5CgA1CE7-K1Frkx0Z9Wp096sAl1vmw6E63Vt/exec",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.data.result === "success") {
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        alert("Something went wrong. Try again.");
+      }
+    } catch (error) {
+      console.error("Axios POST error:", error);
+      alert("CORS or network error occurred.");
+    }
+  };
+
   return (
-    <section className="w-full ">
+    <section className="w-full">
       <div className="max-w-7xl mx-auto text-center px-4 md:px-8 mt-10">
-        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -155,7 +189,7 @@ export default function ContactUs() {
             </div>
           </motion.div>
 
-          {/* Form Section */}
+          {/* Contact Form (No <form>) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -173,39 +207,52 @@ export default function ContactUs() {
             >
               Have a specific request or inquiry? Send us a message.
             </p>
-            <form className="space-y-5">
+
+            <div className="space-y-5">
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name"
                   required
+                  value={formData.name}
+                  onChange={handleChange}
                   className="flex-1 border border-gray-300 rounded px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2a6e9e]"
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Your Email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="flex-1 border border-gray-300 rounded px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2a6e9e]"
                 />
               </div>
               <input
                 type="text"
+                name="subject"
                 placeholder="Subject"
+                value={formData.subject}
+                onChange={handleChange}
                 className="w-full border border-gray-300 rounded px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2a6e9e]"
               />
               <textarea
+                name="message"
                 rows={4}
                 placeholder="Your Message"
                 required
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full border border-gray-300 rounded px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2a6e9e]"
               />
               <button
-                type="submit"
+                // onClick={handleSubmit}
                 className="bg-[#2a6e9e] hover:bg-[#1e5b82] text-white font-semibold px-8 py-3 rounded-full transition"
               >
                 Send Message
               </button>
-            </form>
+            </div>
           </motion.div>
         </div>
       </div>
