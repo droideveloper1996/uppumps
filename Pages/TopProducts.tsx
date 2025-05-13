@@ -12,55 +12,55 @@ const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 const categories = [
   {
     name: "Deepwell Hand Pumps",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Railway",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Submersible Pumps",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Gi Pipe",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Cycle",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Connecting Rods",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Riser Pipes",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Plungers",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Cylinders",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Foot Valves",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Head Assemblies",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "Chain & Handle Sets",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
   {
     name: "PVC Water Tanks",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
   },
 ];
 

@@ -12,13 +12,13 @@ const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
 // Images
 const aboutImages = [
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
 ];
 
 export default function AboutUs() {
@@ -159,17 +159,17 @@ export default function AboutUs() {
             {
               name: "Mr. Harendra Moorjani",
               role: "Managing Director",
-              image: "/assets/placeholder_Image.avif",
+              image: "/assets/placeholder_Image.jpeg",
             },
             {
               name: "Mrs. Neelam Moorjani",
               role: "Director",
-              image: "/assets/placeholder_Image.avif",
+              image: "/assets/placeholder_Image.jpeg",
             },
             {
               name: "Mr. Rajat Moorjani",
               role: "Executive Director",
-              image: "/assets/placeholder_Image.avif",
+              image: "/assets/placeholder_Image.jpeg",
             },
           ].map((member, idx) => (
             <motion.div

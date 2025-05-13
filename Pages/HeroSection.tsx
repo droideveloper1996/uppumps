@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCog, FaPlay } from "react-icons/fa";
+import { FaCog } from "react-icons/fa";
 import Image from "next/image";
 import { Raleway, Poppins } from "next/font/google";
 

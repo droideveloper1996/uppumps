@@ -16,7 +16,7 @@ const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ["latin"] });
 const handpumpData = [
   {
     title: "India Mark II Hand Pump",
-    image: "/assets/indianPagesImage/handpumps/india_mark_2.png",
+    image: "/assets/IndianPagesImage/handpumps/india_mark_2.png",
     overview:
       "India Mark II is one of the most widely used hand pumps across the world for accessing safe drinking water from deep borewells.",
     features: [
@@ -32,7 +32,7 @@ const handpumpData = [
   },
   {
     title: "India Mark III (VLOM) Hand Pump",
-    image: "/assets/indianPagesImage/handpumps/India_mark_3.webp",
+    image: "/assets/IndianPagesImage/handpumps/India_mark_3.webp",
     overview:
       "India Mark III is a Village Level Operation & Maintenance (VLOM) variant of Mark II, allowing villagers to easily maintain and repair the pump with minimal tools.",
     features: [
@@ -48,7 +48,7 @@ const handpumpData = [
   },
   {
     title: "Extra Deepwell Hand Pump",
-    image: "/assets/placeholder_image.avif",
+    image: "/assets/placeholder_Image.jpeg",
     overview:
       "At U. P. Pumps Pvt. Ltd., our Extra Deepwell Hand Pumps are specially engineered for extreme depths up to 120 meters, ensuring reliable access to groundwater in the most challenging conditions. Built for durability, easy maintenance, and heavy-duty usage, they serve rural communities, disaster relief, and agricultural sectors effectively.",
     features: [
@@ -65,7 +65,7 @@ const handpumpData = [
   },
   {
     title: "Afridev Hand Pump",
-    image: "/assets/indianPagesImage/handpumps/afridev_hand_pumps.webp",
+    image: "/assets/IndianPagesImage/handpumps/afridev_hand_pumps.webp",
     overview:
       "The Afridev pump is a medium-depth hand pump developed by UNICEF and widely used across Africa and Asia. Known for its modular design and ease of use.",
     features: [
@@ -81,7 +81,7 @@ const handpumpData = [
   },
   {
     title: "Tara Hand Pump",
-    image: "/assets/indianPagesImage/handpumps/tara_hand_pumps.jpg",
+    image: "/assets/IndianPagesImage/handpumps/tara_hand_pumps.jpg",
     overview:
       "Tara Hand Pump is a shallow well option ideal for water tables closer to the surface. It's a low-cost and lightweight solution, perfect for schools, homes, and villages.",
     features: [
@@ -94,7 +94,7 @@ const handpumpData = [
   },
   {
     title: "Shallow Well Hand Pump",
-    image: "/assets/placeholder_Image.avif",
+    image: "/assets/placeholder_Image.jpeg",
     overview:
       "Our Shallow Well Hand Pumps are designed for water tables close to the surface. They offer reliable water access with minimal effort, making them ideal for schools, homes, and rural areas with high water tables.",
     features: [
@@ -113,7 +113,7 @@ const handpumpData = [
   },
   {
     title: "PVC Riser Pipe",
-    image: "/assets/placeholder_Image.avif",
+    image: "/assets/placeholder_Image.jpeg",
     overview:
       "Our high-grade PVC Riser Pipes are engineered to provide a lightweight, corrosion-resistant alternative to traditional galvanized pipes, ensuring smooth water flow and long service life.",
     features: [
@@ -132,7 +132,7 @@ const handpumpData = [
   },
   {
     title: "Hand Pump Spare Parts",
-    image: "/assets/placeholder_Image.avif",
+    image: "/assets/placeholder_Image.jpeg",
     overview:
       "We offer a comprehensive range of high-quality spare parts for hand pumps, ensuring smooth operation, easy repairs, and long service life of pumps even in the most challenging conditions.",
     features: [
@@ -151,7 +151,7 @@ const handpumpData = [
   },
   {
     title: "Hand Pump Tool Kit",
-    image: "/assets/placeholder_Image.avif",
+    image: "/assets/placeholder_Image.jpeg",
     overview:
       "Our Hand Pump Tool Kits are specially curated for easy installation, servicing, and maintenance of various hand pump models. Rugged, portable, and designed for field conditions.",
     features: [

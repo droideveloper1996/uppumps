@@ -11,11 +11,11 @@ const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
 // Images Array (Replace with your real images)
 const cycleImages = [
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
 ];
 
 export default function CycleManufacturingSection() {

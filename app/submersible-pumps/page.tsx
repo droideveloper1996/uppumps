@@ -25,11 +25,11 @@ const highlights = [
 
 // Pump Images
 const pumpImages = [
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
-  "/assets/placeholder_Image.avif",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
+  "/assets/placeholder_Image.jpeg",
 ];
 
 export default function SubmersiblePumpsSection() {

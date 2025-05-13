@@ -10,7 +10,7 @@ const raleway = Raleway({ weight: ["700", "800"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
 // Sample Image (Replace with your real image path)
-const giPipeImage = "/assets/placeholder_Image.avif";
+const giPipeImage = "/assets/placeholder_Image.jpeg";
 
 export default function GiPipesSection() {
   return (
