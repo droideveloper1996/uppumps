@@ -39,7 +39,7 @@ export default function RailwayPage() {
       <WebNavbar />
 
       <section
-        className={`${poppins.className} w-full bg-white py-16 px-4 sm:px-8 md:px-12`}
+        className={`${poppins.className} w-full bg-[#ebebeb] py-16 px-4 sm:px-8 md:px-12`}
       >
         <RailwayHero />
 

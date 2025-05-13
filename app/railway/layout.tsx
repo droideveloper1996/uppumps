@@ -4,7 +4,7 @@ import React from "react";
 
 const RailwayLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#ebebeb]">
       {/* Optional layout wrappers like header, sidebar can go here */}
       {children}
     </div>
