@@ -13,39 +13,39 @@ const poppins = Poppins({ weight: ["400", "500", "600"], subsets: ["latin"] });
 const railwayProducts = [
   {
     name: "Rail Wheel",
-    image: "/assets/indianPagesImage/railway/Rollingstock_axle.jpg",
+    image: "/assets/IndianPagesImage/railway/Rollingstock_axle.jpg",
   },
   {
     name: "Complete Shell Assembly",
-    image: "/assets/indianPagesImage/railway/1product-locomotive-big.jpg",
+    image: "/assets/IndianPagesImage/railway/1product-locomotive-big.jpg",
   },
   {
     name: "Complete Coach",
-    image: "/assets/indianPagesImage/railway/book-well-in-advance.webp",
+    image: "/assets/IndianPagesImage/railway/book-well-in-advance.webp",
   },
   {
     name: "Small Track Equipment for Railway",
-    image: "/assets/indianPagesImage/railway/download (1).jpeg",
+    image: "/assets/IndianPagesImage/railway/download (1).jpeg",
   },
   {
     name: "Heavy Rail-track Manufacturing and Consulting",
-    image: "/assets/indianPagesImage/railway/download (2).jpeg",
+    image: "/assets/IndianPagesImage/railway/download (2).jpeg",
   },
   {
     name: "All Other Small and Heavy Railway Equipment and Vehicles",
-    image: "/assets/indianPagesImage/railway/images (4).jpeg",
+    image: "/assets/IndianPagesImage/railway/images (4).jpeg",
   },
   {
     name: "Robotic Platform with Remote and Battery Operated Equipments",
-    image: "/assets/indianPagesImage/railway/u5-1200x800.jpg",
+    image: "/assets/IndianPagesImage/railway/u5-1200x800.jpg",
   },
   {
     name: "Roof, Sidewall, Underframe for Coach and Locomotive",
-    image: "/assets/indianPagesImage/railway/336244_1_En_6_Fig15_HTML.png",
+    image: "/assets/IndianPagesImage/railway/336244_1_En_6_Fig15_HTML.png",
   },
   {
     name: "Biomass for All Types of STP Plant",
-    image: "/assets/indianPagesImage/railway/sewage-system-24.jpg",
+    image: "/assets/IndianPagesImage/railway/sewage-system-24.jpg",
   },
 ];
 

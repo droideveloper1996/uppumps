@@ -9,7 +9,6 @@ import Footer from "@/Pages/Footer";
 import { Raleway, Poppins } from "next/font/google";
 import RailwayHero from "./RailwayHero";
 
-
 // Fonts
 const raleway = Raleway({ weight: ["600", "700", "800"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
@@ -133,7 +132,7 @@ export default function RailwayPage() {
             <div className="sm:col-span-2 flex justify-center">
               <button
                 onClick={handleSubmit}
-                className="bg-[#2a6e9e] hover:bg-blue-800 text-white px-8 py-3 rounded-full font-semibold transition-all"
+                className="bg-[#2a6e9e] hover:bg-[#527d9c] text-white px-8 py-3 rounded-full font-semibold transition-all"
               >
                 Submit Enquiry
               </button>
