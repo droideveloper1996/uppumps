@@ -12,11 +12,11 @@ const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 const categories = [
   {
     name: "Deepwell Hand Pumps",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/handpumps/india_mark_2.png",
   },
   {
     name: "Railway",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/railway/1product-locomotive-big.jpg",
   },
   {
     name: "Submersible Pumps",
@@ -32,35 +32,35 @@ const categories = [
   },
   {
     name: "Connecting Rods",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/AccessoryParts/CR1.png",
   },
   {
     name: "Riser Pipes",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/AccessoryParts/riser_pipes.jpeg",
   },
   {
     name: "Plungers",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/AccessoryParts/plungers.jpg",
   },
   {
     name: "Cylinders",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/AccessoryParts/cylinders.jpg",
   },
   {
     name: "Foot Valves",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/AccessoryParts/foot_valves.jpeg",
   },
   {
     name: "Head Assemblies",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/AccessoryParts/head_assembly.jpg",
   },
   {
     name: "Chain & Handle Sets",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/AccessoryParts/chain_handle.jpg",
   },
   {
     name: "PVC Water Tanks",
-    image: "/assets/placeholder_Image.jpeg",
+    image: "/assets/IndianPagesImage/AccessoryParts/water_tank.jpg",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function TopCategories() {
                   src={item.image}
                   alt={item.name}
                   fill
-                  className="object-cover rounded-t-xl"
+                  className="object-fill rounded-t-xl"
                 />
               </div>
               <div className="px-3 py-3  font-medium text-gray-700 text-sm sm:text-sm">
