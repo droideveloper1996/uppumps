@@ -4,6 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { Raleway, Poppins } from "next/font/google";
+import second from "../public/assets/worker_image/WhatsApp Image 2025-05-12 at 16.08.17 (1).jpeg";
 
 // Fonts
 const raleway = Raleway({ weight: ["700", "800"], subsets: ["latin"] });
@@ -25,16 +26,13 @@ export default function AboutUsSection() {
     >
       <div className="flex flex-col md:flex-row gap-12 items-center">
         {/* Left Image Block */}
-        <div className="relative flex justify-center items-start min-h-[400px] w-full md:w-1/2">
-          <div className="absolute top-0 left-0 md:top-8 md:left-8 w-72 md:w-96 rounded-xl overflow-hidden shadow-md z-0">
-            <Image
-              src="/assets/AboutImage/about-5.webp"
-              alt="Background office"
-              width={600}
-              height={300}
-              className="rounded-xl object-cover w-full h-full"
-            />
-          </div>
+        <div className="relative flex justify-center items-start min-h-[400px] w-full md:w-1/2 ">
+          <Image
+            src="/assets/worker_image/WhatsApp Image 2025-05-12 at 16.08.18 (1).jpeg"
+            alt="Background office"
+            fill
+            className="rounded-xl object-cover brightness-75"
+          />
         </div>
 
         {/* Right Content */}

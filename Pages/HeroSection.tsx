@@ -69,11 +69,11 @@ export default function HeroSection() {
           <div className="relative w-fit overflow-hidden rounded-xl">
             <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-br from-white/60 via-transparent to-white/60 blur-3xl" />
             <Image
-              src="/assets/HeroSection/georg-eiermann-BW4Fp1_sorw-unsplash copy.jpg"
+              src="/assets/worker_image/WhatsApp Image 2025-05-12 at 16.08.33 (1).jpeg"
               alt="Hero Illustration"
               width={600}
               height={400}
-              className="object-contain relative z-0 rounded-xl"
+              className="object-cover rounded-xl brightness-50"
             />
           </div>
         </motion.div>
