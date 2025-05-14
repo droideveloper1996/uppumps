@@ -11,12 +11,12 @@ import TestimonialsSection from "@/Pages/TestimonialsSection";
 import TopProducts from "@/Pages/TopProducts";
 import VideoToolbar from "@/Pages/VideoToolbar";
 import VisionMissionSection from "@/Pages/VisionMissionSection";
-import WebNavbar from "@/Pages/WebNavbar";
+import WebVideoNavbar from "@/Pages/WebVideoNavbar";
 
 export default function Home() {
   return (
     <>
-      <WebNavbar />
+      <WebVideoNavbar />
 
       {/* <NewToolbar /> */}
       {/* <HeroSection /> */}
