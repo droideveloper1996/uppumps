@@ -22,10 +22,10 @@ const contactItems = [
     description: (
       <>
         For queries, support & complaints, <br />
-        contact <strong>+91 9415127047 / +91 9455598050</strong>
+        contact <strong>+91 9455598050</strong>
       </>
     ),
-    button: { text: "Call", link: "tel:+919415127047" },
+    button: { text: "Call", link: "tel:+919455598050" },
   },
   {
     icon: <FaWhatsapp size={40} />,
@@ -35,7 +35,7 @@ const contactItems = [
         Drop us a message for quick <br /> Whatsapp assistance
       </>
     ),
-    button: { text: "WhatsApp", link: "https://wa.me/919415127047" },
+    button: { text: "WhatsApp", link: "https://wa.me/919455598050" },
   },
   {
     icon: <FaEnvelope size={40} />,
@@ -43,12 +43,12 @@ const contactItems = [
     description: (
       <>
         For inquiries, quotes or export details, <br />
-        email us at: <strong>uppumpsknp1@gmail.com</strong>
+        email us at: <strong>uppumpslimited@gmail.com</strong>
       </>
     ),
     button: {
       text: "Email",
-      link: "mailto:uppumpsknp1@gmail.com",
+      link: "mailto:uppumpslimited@gmail.com",
     },
   },
 ];

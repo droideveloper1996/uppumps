@@ -147,22 +147,15 @@ export default function Footer() {
               <p>
                 📧 <strong>Email:</strong>{" "}
                 <a
-                  href="mailto:uppumpsknp1@gmail.com"
+                  href="mailto:uppumpslimited@gmail.com"
                   className="text-[#2a6e9e] hover:underline"
                 >
-                  uppumpsknp1@gmail.com
+                  uppumpslimited@gmail.com
                 </a>
               </p>
 
               <p>
                 📞 <strong>Phone:</strong>{" "}
-                <a
-                  href="tel:+919415127047"
-                  className="text-[#2a6e9e] hover:underline"
-                >
-                  +91 9415127047
-                </a>{" "}
-                |{" "}
                 <a
                   href="tel:+919455598050"
                   className="text-[#2a6e9e] hover:underline"

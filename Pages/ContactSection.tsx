@@ -99,15 +99,15 @@ export default function ContactSection() {
               <div className="flex items-center gap-2 pt-4">
                 <FaEnvelope />
                 <a
-                  href="mailto:uppumpsknp1@gmail.com"
+                  href="mailto:uppumpslimited@gmail.com"
                   className="hover:underline"
                 >
-                  uppumpsknp1@gmail.com
+                  uppumpslimited@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <FaPhoneAlt />
-                <p>+91 9415127047 | +91 9455598050</p>
+                <p> +91 9455598050</p>
               </div>
             </div>
           </motion.div>

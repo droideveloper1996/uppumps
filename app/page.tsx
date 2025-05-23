@@ -1,6 +1,6 @@
 import AboutUsSection from "@/Pages/AboutSection";
 import AchievementCardSlide from "@/Pages/AchievementCradSlide";
-import Catalogue from "@/Pages/Catalogue";
+import CatalogueSection from "@/Pages/CatalogueSection";
 import ContactSection from "@/Pages/ContactSection";
 import FaqSection from "@/Pages/FaqSection";
 import FeatureTabSection from "@/Pages/FeatureTabSection";
@@ -25,7 +25,7 @@ export default function Home() {
       <HeroSection />
       <AboutUsSection />
       <TopProducts />
-      <Catalogue />
+      <CatalogueSection />
       <VisionMissionSection />
       <AchievementCardSlide />
       {/* <FeatureTabSection /> */}

@@ -12,9 +12,9 @@ const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 // Images
 const images = [
   "/assets/IndianPagesImage/AccessoryParts/water_tank.jpg",
-  "/assets/IndianPagesImage/AccessoryParts/water_tank.jpg",
-  "/assets/IndianPagesImage/AccessoryParts/water_tank.jpg",
-  "/assets/IndianPagesImage/AccessoryParts/water_tank.jpg",
+  "/assets/IndianPagesImage/AccessoryParts/hex_nut_1.jpg",
+  "/assets/IndianPagesImage/AccessoryParts/tool_set_1.jpg",
+  "/assets/IndianPagesImage/AccessoryParts/upper_valve_guide_1.jpg",
 ];
 
 // Variants
@@ -109,7 +109,7 @@ export default function CatalogueSection() {
                     src={src}
                     alt={`Catalogue image ${i + 1}`}
                     fill
-                    className="object-cover transition-transform duration-500"
+                    className="object-fill transition-transform duration-500"
                   />
                 </motion.div>
               </div>

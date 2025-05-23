@@ -13,19 +13,17 @@ export default function ContactTable() {
             <FaEnvelope style={{ color: "#2a6e9e" }} />
             Email:
             <a
-              href="mailto:uppumpsknp1@gmail.com"
+              href="mailto:uppumpslimited@gmail.com"
               className="underline font-medium"
               style={{ color: "#2a6e9e" }}
             >
-              uppumpsknp1@gmail.com
+              uppumpslimited@gmail.com
             </a>
           </p>
           <p className="text-slate-800 text-base sm:text-lg font-semibold flex items-center gap-2 mt-2">
             <FaPhone style={{ color: "#2a6e9e" }} />
             Phone:{" "}
-            <span className="font-normal text-slate-700">
-              +91 9415127047 | +91 9455598050
-            </span>
+            <span className="font-normal text-slate-700">+91 9455598050</span>
           </p>
         </div>
 

@@ -16,7 +16,7 @@ const categories = [
   },
   {
     name: "Railway",
-    image: "/assets/IndianPagesImage/railway/1product-locomotive-big.jpg",
+    image: "/assets/IndianPagesImage/railway/wag9 coach.jpeg",
   },
   {
     name: "Submersible Pumps",
@@ -66,7 +66,7 @@ const categories = [
 
 export default function TopCategories() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const scrollByAmount = 250; 
+  const scrollByAmount = 250;
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -108,17 +108,17 @@ export default function TopCategories() {
           {categories.map((item, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-40 sm:w-48 bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+              className="group flex-shrink-0 w-40 sm:w-48 bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition"
             >
-              <div className="relative w-full h-40 sm:h-44">
+              <div className="relative w-full h-40 sm:h-44 overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.name}
                   fill
-                  className="object-fill rounded-t-xl"
+                  className="object-fill rounded-t-xl transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="px-3 py-3  font-medium text-gray-700 text-sm sm:text-sm">
+              <div className="px-3 py-3 font-medium text-gray-700 text-sm sm:text-sm">
                 {item.name}
               </div>
             </div>

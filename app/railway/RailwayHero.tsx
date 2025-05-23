@@ -40,7 +40,7 @@ const railwayProducts = [
   },
   {
     name: "Roof, Sidewall, Underframe for Coach and Locomotive",
-    image: "/assets/IndianPagesImage/railway/336244_1_En_6_Fig15_HTML.png",
+    image: "/assets/IndianPagesImage/railway/Roof.jpeg",
   },
   {
     name: "Biomass for All Types of STP Plant",
@@ -90,7 +90,7 @@ export default function RailwayFullPage() {
           At U P Pumps (P) Ltd, we specialize in the manufacturing, trading, and
           consulting of premium railway products. Our expertise spans a diverse
           range of components, including rail wheels, complete shell assemblies,
-          and fully integrated coach systems—engineered to meet the rigorous
+          and fully integrated coach systems- engineered to meet the rigorous
           demands of modern rail infrastructure. Backed by decades of industry
           experience and a forward-thinking approach, we are committed to
           delivering reliable, high-performance solutions to our partners in the
@@ -103,7 +103,14 @@ export default function RailwayFullPage() {
           heavy rail track machinery, designed to ensure the durability, safety,
           and efficiency of railway infrastructure. From fastening systems and
           fish plates to rail cutting and welding machines, we provide
-          end-to-end solutions that support seamless operations on the ground.
+          end-to-end solutions that support seamless operations on the ground.”
+          “Our expertise extends across a comprehensive range of track-related
+          products—small track equipment essential for daily maintenance, as
+          well as heavy-duty rail tools and machinery for large-scale
+          infrastructure projects. With a focus on precision engineering and
+          long-term performance, we work closely with clients to provide
+          customized solutions that meet the technical and operational demands
+          of the railway sector.”
         </p>
         <p className="mb-6">
           Our expertise extends across a comprehensive range of track-related
@@ -130,6 +137,11 @@ export default function RailwayFullPage() {
           >
             Our Trusted Partners
           </h3>
+
+          <p className="my-10">
+            We proudly work with India’s leading railway manufacturing units,
+            including:
+          </p>
           <ul
             className={`list-disc list-inside text-gray-700 space-y-2 ${poppins.className}`}
           >
@@ -140,6 +152,10 @@ export default function RailwayFullPage() {
             <li>Modern Coach Factory (MCF), Raebareli</li>
             <li>Integral Coach Factory (ICF), Chennai</li>
           </ul>
+          <p className="mt-5">
+            These collaborations reflect our reputation for quality and
+            reliability in the railway sector.
+          </p>
         </motion.div>
 
         <motion.div
@@ -175,6 +191,10 @@ export default function RailwayFullPage() {
             specialize in providing grinders for WAG9 locomotives, a vital
             component for maintaining and enhancing the operational efficiency
             of these powerful engines.
+            <br /> <br />
+            With a focus on structural integrity and seamless integration, we
+            support our clients in building robust, high-performance rail
+            systems from the ground up.{" "}
           </p>
         </motion.div>
       </div>

@@ -270,8 +270,8 @@ export default function Handpumps() {
           For detailed specifications, spare parts, and complete catalogues,
           please contact us via phone at
           <br />
-          <strong>+91 9415127047 / +91 9455598050</strong> or email us at{" "}
-          <strong>uppumpsknp1@gmail.com</strong>.
+          <strong> +91 9455598050</strong> or email us at{" "}
+          <strong>uppumpslimited@gmail.com</strong>.
         </p>
 
         <button

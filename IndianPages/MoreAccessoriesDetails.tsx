@@ -892,10 +892,10 @@ export default function MoreAccessoriesDetails() {
                   </p>
                   <ul className="list-disc pl-5 mt-2 text-sm">
                     <li>
-                      📧 Email: <strong>uppumpsknp1@gmail.com</strong>
+                      📧 Email: <strong>uppumpslimited@gmail.com</strong>
                     </li>
                     <li>
-                      📞 Phone: <strong>+91 9415127047 / +91 9455598050</strong>
+                      📞 Phone: <strong> +91 9455598050</strong>
                     </li>
                     <li>🏢 Address: 1-B, Dadanagar, Kanpur, UP, 208022</li>
                   </ul>
