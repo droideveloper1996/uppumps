@@ -36,8 +36,6 @@ export default function RailwayPage() {
 
   return (
     <>
-      <WebNavbar />
-
       <section
         className={`${poppins.className} w-full bg-[#ebebeb] py-16 px-4 sm:px-8 md:px-12`}
       >
@@ -140,8 +138,6 @@ export default function RailwayPage() {
           </div>
         </motion.div>
       </section>
-
-      <Footer />
     </>
   );
 }

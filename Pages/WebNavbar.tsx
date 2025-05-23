@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Raleway, Poppins } from "next/font/google";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
 import logo_image from "../public/assets/logo/U-2.png";
 
 // Fonts
@@ -61,6 +62,14 @@ export default function WebNavbar() {
               </span>
             </div>
           </div>
+
+          {/* Request Quote Button */}
+          <button
+            onClick={() => navigateTo("/contact")}
+            className="hidden sm:inline-block bg-[#2a6e9e] text-white px-4 py-2 rounded-md font-medium hover:bg-[#1e5175] transition"
+          >
+            Request a Quote
+          </button>
 
           {/* Hamburger Menu (Mobile) */}
           <div className="sm:hidden">
@@ -147,6 +156,17 @@ export default function WebNavbar() {
           </>
         )}
       </AnimatePresence>
+
+      {/* Bottom WhatsApp Button */}
+      {/* <a
+        href="https://wa.me/919999999999" // Replace with actual number
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-50 flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#1DA851] transition"
+      >
+        <FaWhatsapp size={20} />
+        <span className="text-sm font-medium">Chat with us</span>
+      </a> */}
     </>
   );
 }

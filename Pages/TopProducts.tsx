@@ -66,7 +66,7 @@ const categories = [
 
 export default function TopCategories() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const scrollByAmount = 250;
+  const scrollByAmount = 250; 
 
   const scrollLeft = () => {
     if (scrollRef.current) {

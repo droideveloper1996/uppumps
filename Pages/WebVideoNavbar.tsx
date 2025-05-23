@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Raleway, Poppins } from "next/font/google";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
 import logo_image from "../public/assets/logo/U-2.png";
 
 // Fonts
@@ -28,7 +29,7 @@ const menuItems = [
   { label: "Contact Us", href: "/contact" },
 ];
 
-// Carousel messages (multi-line)
+// Carousel messages
 const carouselMessages = [
   {
     title: "Delivering Quality Since 1995",
@@ -104,6 +105,14 @@ export default function WebVideoNavbar() {
               </span>
             </div>
           </div>
+
+          <button
+            onClick={() => navigateTo("/contact")}
+            className="hidden sm:block bg-white text-[#2a6e9e] font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition"
+          >
+            Request a Quote
+          </button>
+
           <div className="sm:hidden">
             <button onClick={() => setIsOpen(true)}>
               <HiOutlineMenuAlt3 size={28} className="text-white" />
@@ -160,7 +169,6 @@ export default function WebVideoNavbar() {
           </motion.div>
         </AnimatePresence>
 
-        {/* 🔘 Dots */}
         <div className="mt-6 flex justify-center gap-3">
           {carouselMessages.map((_, i) => (
             <button
@@ -221,6 +229,16 @@ export default function WebVideoNavbar() {
           </>
         )}
       </AnimatePresence>
+
+      {/* 🟢 WhatsApp Chat */}
+      <a
+        href="https://wa.me/919455598050"
+        target="_blank"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg flex items-center space-x-2"
+      >
+        <FaWhatsapp size={20} />
+        <span className="hidden sm:inline font-semibold">Chat with Us</span>
+      </a>
     </div>
   );
 }
