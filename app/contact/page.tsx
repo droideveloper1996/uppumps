@@ -60,6 +60,10 @@ export default function ContactUs() {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -68,27 +72,47 @@ export default function ContactUs() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async () => {
-    try {
-      const response = await axios.post(
-        "https://script.google.com/macros/s/AKfycbz6zQDfigIF6aTPM_TpO9Yj4H72RN0Q5CgA1CE7-K1Frkx0Z9Wp096sAl1vmw6E63Vt/exec",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
 
-      if (response.data.result === "success") {
-        alert("Message sent successfully!");
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all required fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbxMHY_ylTxbXim44wjbF51OIIQgcqkoSlxHlwk-GO_cDTjXlc1J5MMDJFVDNPHCdclx/exec";
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      console.log("Response:", result);
+
+      if (result.result === "success") {
+        setSubmitStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
+        alert("Message sent successfully!");
       } else {
-        alert("Something went wrong. Try again.");
+        throw new Error(result.message || "Submission failed");
       }
-    } catch (error) {
-      console.error("Axios POST error:", error);
-      alert("CORS or network error occurred.");
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+      alert(error.message || "An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -247,10 +271,15 @@ export default function ContactUs() {
                 className="w-full border border-gray-300 rounded px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#2a6e9e]"
               />
               <button
-                // onClick={handleSubmit}
-                className="bg-[#2a6e9e] hover:bg-[#1e5b82] text-white font-semibold px-8 py-3 rounded-full transition"
+                onClick={handleSubmit}
+                disabled={isSubmitting}
+                className={`${
+                  isSubmitting
+                    ? "bg-gray-400"
+                    : "bg-[#2a6e9e] hover:bg-[#1e5b82]"
+                } text-white font-semibold px-8 py-3 rounded-full transition flex items-center justify-center`}
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </div>
           </motion.div>
