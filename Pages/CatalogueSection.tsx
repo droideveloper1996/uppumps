@@ -16,7 +16,7 @@ const images = [
   "/assets/IndianPagesImage/AccessoryParts/tool_set_1.jpg",
   "/assets/IndianPagesImage/AccessoryParts/upper_valve_guide_1.jpg",
 ];
-
+ 
 // Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },

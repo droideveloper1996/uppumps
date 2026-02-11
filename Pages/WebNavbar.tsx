@@ -51,7 +51,7 @@ export default function WebNavbar() {
             <Image
               src={logo_image}
               alt="logo"
-              className="w-[3rem] h-[3rem] rounded-sm object-contain"
+              className="w-[4rem] h-[4rem] rounded-sm object-contain"
             />
             <div className="flex flex-col items-center justify-center ">
               <span className="text-xl sm:text-2xl font-extrabold text-[#2a6e9e]">

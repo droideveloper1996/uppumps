@@ -11,7 +11,9 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import { Raleway, Poppins } from "next/font/google";
-import logo from "@/public/assets/logo/logo_with_name.png"; // Update your logo path
+// import logo from "@/public/assets/logo/logo_with_name.png"; // Update your logo path
+
+import logo from "@/public/assets/logo/U-2.png"; // Update your logo path
 
 // Fonts
 const raleway = Raleway({ weight: ["700", "800", "900"], subsets: ["latin"] });
@@ -28,13 +30,33 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  text-sm text-slate-700 gap-10">
         {/* Logo & About */}
         <div className="flex flex-col items- md:items-start ">
-          <Image
+          {/* <Image
             src={logo}
             alt="U. P. Pumps Pvt. Ltd. Logo"
-            width={250}
-            height={80}
+            width={70}
+            height={70}
             className="rounded-lg mb-4"
-          />
+          /> */}
+
+ {/* Logo Section */}
+          <div
+            // onClick={() => navigateTo("/")}
+            className={`flex items-center space-x-3 cursor-pointer ${raleway.className}`}
+          >
+            <Image 
+              src={logo}   
+              alt="logo"
+              className="w-[4rem] h-[4rem] rounded-sm object-contain"
+            />
+            <div className="flex flex-col items-center justify-center ">
+              <span className="text-xl sm:text-2xl font-extrabold text-[#2a6e9e]">
+                U. P. Pumps Pvt. Ltd.
+              </span>
+              <span className="text-sm font-semibold text-[#2a6e9e] -translate-y-1">
+                Built to Last. Made to Adapt
+              </span>
+            </div>
+          </div>
 
           <p className="text-sm leading-relaxed max-w-xs">
             Established in 1991, U. P. Pumps Pvt. Ltd. has proudly evolved into
