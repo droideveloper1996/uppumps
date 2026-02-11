@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 export default function ContactTable() {
   return (
-    <section className="w-full bg-white py-12 px-4 sm:px-8">
+    <section className="w-full bg-white py-12 px-4 sm:px-8 rounded-2xl">
       <div className="max-w-7xl mx-auto">
         {/* Email & Phone */}
         <div className="mb-8">
@@ -63,6 +64,15 @@ export default function ContactTable() {
             </p>
           </div>
         </div>
+        <p className=" text-lg  text-[#2a6e9e] mt-10 w-full ">
+          Have questions or need assistance?{" "}
+          <Link
+            href="/contact"
+            className="underline text-blue-700 hover:text-blue-900 font-bold transition-colors duration-200 w-full"
+          >
+            Click here to contact us →
+          </Link>
+        </p>
       </div>
     </section>
   );

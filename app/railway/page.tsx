@@ -57,7 +57,7 @@ export default function RailwayPage() {
 
           <ContactTable />
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-10 border border-gray-200 rounded-xl">
+          {/* <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-10 border border-gray-200 rounded-xl">
             <div className="sm:col-span-2 mb-6 text-center">
               <p
                 className={`text-2xl font-bold ${raleway.className}`}
@@ -135,7 +135,7 @@ export default function RailwayPage() {
                 Submit Enquiry
               </button>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </section>
     </>

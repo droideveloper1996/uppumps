@@ -9,9 +9,7 @@ import {
 } from "react-icons/fa";
 import { Raleway, Poppins } from "next/font/google";
 import { useState } from "react";
-import axios from "axios";
 
-// Fonts
 const raleway = Raleway({ weight: ["700", "800"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] });
 
@@ -61,21 +59,16 @@ export default function ContactUs() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
+  const [submitStatus, setSubmitStatus] = useState("idle");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    // Validate form
     if (!formData.name || !formData.email || !formData.message) {
       alert("Please fill in all required fields");
       return;
@@ -84,33 +77,31 @@ export default function ContactUs() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbxMHY_ylTxbXim44wjbF51OIIQgcqkoSlxHlwk-GO_cDTjXlc1J5MMDJFVDNPHCdclx/exec";
-
     try {
-      const response = await fetch(scriptURL, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "cors",
         body: JSON.stringify(formData),
       });
 
       const result = await response.json();
-      console.log("Response:", result);
-
-      if (result.result === "success") {
+      if (response.ok && result.result === "success") {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
         alert("Message sent successfully!");
       } else {
         throw new Error(result.message || "Submission failed");
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error("Error submitting form:", error);
-      setSubmitStatus("error");
-      alert(error.message || "An error occurred. Please try again later.");
+
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert("An unknown error occurred. Please try again later.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -136,7 +127,6 @@ export default function ContactUs() {
           style={{ originX: 0.5 }}
         />
 
-        {/* Contact Cards */}
         <div className="flex flex-wrap justify-center gap-8">
           {contactItems.map((item, index) => (
             <motion.div
@@ -169,9 +159,7 @@ export default function ContactUs() {
           ))}
         </div>
 
-        {/* Offices + Form */}
         <div className="flex flex-col lg:flex-row gap-10 mt-20">
-          {/* Offices Section */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -213,7 +201,6 @@ export default function ContactUs() {
             </div>
           </motion.div>
 
-          {/* Contact Form (No <form>) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
